@@ -3,9 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
+
+
+const app = [
+  <App />
+]
+
+
+
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {app}
   </React.StrictMode>,
   document.getElementById('root')
 );
