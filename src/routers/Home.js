@@ -1,5 +1,5 @@
 import React from 'react';
-import {Header} from "../components/";
+import {Header,Coins} from "../components/";
 
 
 
@@ -8,6 +8,7 @@ const Home = () => {
     return (
         <section>
          <Header/>
+         <Coins/>
         </section>
     )
     

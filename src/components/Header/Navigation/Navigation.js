@@ -6,6 +6,7 @@ import Logo from "./Logo/Logo";
 const Navigation = () => {
 
     return (
+
         <Nav>
             <Logo/>
             <Search/>

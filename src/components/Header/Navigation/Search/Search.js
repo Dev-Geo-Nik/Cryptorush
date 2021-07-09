@@ -5,7 +5,7 @@ const Search = () => {
 
     return (
         <SearchSpan>
-            
+            <input type="text" className="search-input"  placeholder="Search"/>
         </SearchSpan>
     )
     
