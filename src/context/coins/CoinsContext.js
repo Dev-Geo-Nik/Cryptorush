@@ -3,12 +3,14 @@ import   reducer from "./CoinsReducer";
 
 
 //import actions
-import {LOAD_ALL_COINS} from "../Actions";
+import {LOAD_ALL_COINS,GET_NUMBER_OF_ALL_COINS,GET_NUMBER_OF_ALL_EXCHANGES} from "../Actions";
 
 const initialState = {
     allCoins: [],
     counter:1,
-    fiatCurrency:"usd"
+    fiatCurrency:"usd",
+    coinsCount:null,
+    exchangesCount:null,
 }
 
 
@@ -20,18 +22,31 @@ export const CoinsProvider = ({children}) =>{
 
 
     useEffect(() => {
-       fetchAllCoins(); 
+       fetchAllCoins(LOAD_ALL_COINS); 
+       fetchAllCoins(GET_NUMBER_OF_ALL_COINS); 
+       fetchAllCoins(GET_NUMBER_OF_ALL_EXCHANGES); 
+    
     },[])
+    
 
-
-   const fetchAllCoins = async  () =>{
+   const fetchAllCoins = async  (action) =>{
+        let res = "";
 
        try {
-            const  res = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${state.fiatCurrency}&order=market_cap_desc&per_page=100&page=${state.counter}&sparkline=true`); 
+           
+            if (action === LOAD_ALL_COINS) {  res = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${state.fiatCurrency}&order=market_cap_desc&per_page=100&page=${state.counter}&sparkline=true`); }
+            if (action === GET_NUMBER_OF_ALL_COINS) {res = await fetch(`https://api.coingecko.com/api/v3/coins/list?include_platform=false`);}   
+            if (action === GET_NUMBER_OF_ALL_EXCHANGES) {res = await fetch(`https://api.coingecko.com/api/v3/exchanges/list`);}   
+            
+
+         
             if (res.status >= 200 || res.status <= 299 ) {
 
                 const data = await res.json();
-                dispatch({type:LOAD_ALL_COINS ,payload:data})
+                if (action === LOAD_ALL_COINS) {dispatch({type:LOAD_ALL_COINS ,payload:data});}
+                if (action === GET_NUMBER_OF_ALL_COINS) {dispatch({type:GET_NUMBER_OF_ALL_COINS ,payload:data});}
+                if (action === GET_NUMBER_OF_ALL_EXCHANGES) {dispatch({type:GET_NUMBER_OF_ALL_EXCHANGES ,payload:data});}
+               
             }
         } catch (error) {
                 console.log(error)

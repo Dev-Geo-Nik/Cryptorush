@@ -53,11 +53,24 @@ export const CoinsSection = styled.section`
 
     .link-container{
         border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        display: inline-block;
+        padding: 2rem 0;
+    }
+
+    .row{
+        
+
+    }
+
+    .font{
+        font-size: 1.8rem;  
+        color:#000;
     }
 
     .coin-rank{
         width:5rem;
         text-align: center;
+        
     }
 
     .coin-image-container{
@@ -70,18 +83,20 @@ export const CoinsSection = styled.section`
 
     .coin-name{
         display:inline-block;
-        font-size: 1.8rem;
+       
         margin-left: 4rem;
     }
     
     .coin-symbol{
         margin-left:auto;
+        margin-right: 2rem;
+     
     }
 
     .coin-price{
         width:20rem;
         text-align: right;
-        font-size: 1.8rem;
+     
     }
 
     .coins-table{
@@ -92,6 +107,15 @@ export const CoinsSection = styled.section`
     .coin-price-24h{
         width: 25rem;
         text-align: center;
+       
+    }
+
+    .green{
+        color:green;
+    }
+    
+    .red{
+        color:red;
     }
  
 
