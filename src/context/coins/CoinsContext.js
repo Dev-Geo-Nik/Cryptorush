@@ -34,7 +34,7 @@ export const CoinsProvider = ({children}) =>{
 
        try {
            
-            if (action === LOAD_ALL_COINS) {  res = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${state.fiatCurrency}&order=market_cap_desc&per_page=100&page=${state.counter}&sparkline=true`); }
+            if (action === LOAD_ALL_COINS) {  res = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${state.fiatCurrency}&order=market_cap_desc&per_page=100&page=${state.counter}&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C30d%2C1y`); }
             if (action === GET_NUMBER_OF_ALL_COINS) {res = await fetch(`https://api.coingecko.com/api/v3/coins/list?include_platform=false`);}   
             if (action === GET_NUMBER_OF_ALL_EXCHANGES) {res = await fetch(`https://api.coingecko.com/api/v3/exchanges/list`);}   
             
