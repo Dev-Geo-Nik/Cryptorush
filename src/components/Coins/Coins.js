@@ -6,7 +6,7 @@ import {numberWithCommas} from "../../util/helpers";
 
 const Coins = () => {
     const {allCoins,coinsCount,exchangesCount} = useCoinContext();
-    console.log(allCoins,coinsCount,exchangesCount)
+    // console.log(allCoins,coinsCount,exchangesCount)
 
     const displayCoins = allCoins.length > 0 ? allCoins.map((coin)=>{
 
@@ -24,60 +24,58 @@ const Coins = () => {
             total_volume,
             market_cap
               } = coin;
-     
+              
             return(
                 <Link to ={`/${id}`} key={id} className="link-container">
-                        <tr className="row" >
+                        <div className="row" >
                             <span className="flex-group-coin-1">
-                                <td className="coin-rank font">{market_cap_rank}</td>
-                                <td className="coin-image-container font"><img src={image} alt={`image of ${symbol}`} className="coin-image" />   <td className="coin-name font">{name}</td>   <td className="coin-symbol font">{symbol.toUpperCase()}</td> </td>                  
-                                <td className="coin-price font">{current_price}</td>
+                                <div className="coin-rank font">{market_cap_rank}</div>
+                                <div className="coin-image-container font"><img src={image} alt={`image of ${symbol}`} className="coin-image" />   <div className="coin-name font">{name}</div>   <div className="coin-symbol font">{symbol.toUpperCase()}</div> </div>                  
+                                <div className="coin-price font">{current_price}</div>
                             </span>
                             <span className="flex-group-coin-2">
-                                <td className={chart1h.toFixed(2) > 0 ? "coin-price-1h font green" : "coin-price-1h font red"}>{chart1h.toFixed(2) } %</td>
-                                <td className={chart24h.toFixed(2) > 0 ? "coin-price-24h font green" : "coin-price-24h font red"}>{chart24h.toFixed(2) } %</td>
-                                <td className={chart7d.toFixed(2) > 0 ? "coin-price-7d font green" : "coin-price-7d font red"}>{chart7d.toFixed(2) } %</td>
-                                <td className={chart30d.toFixed(2) > 0 ? "coin-price-30d font green" : "coin-price-30d font red"}>{chart30d.toFixed(2) } %</td>
+                                <div className={chart1h.toFixed(2) > 0 ? "coin-price-1h font green" : "coin-price-1h font red"}>{chart1h.toFixed(2) } %</div>
+                                <div className={chart24h.toFixed(2) > 0 ? "coin-price-24h font green" : "coin-price-24h font red"}>{chart24h.toFixed(2) } %</div>
+                                <div className={chart7d.toFixed(2) > 0 ? "coin-price-7d font green" : "coin-price-7d font red"}>{chart7d.toFixed(2) } %</div>
+                                <div className={chart30d.toFixed(2) > 0 ? "coin-price-30d font green" : "coin-price-30d font red"}>{chart30d.toFixed(2) } %</div>
                             </span>
                             <span className="flex-group-coin-3">
-                                {/* <td className={ roi > 0 ? "coin-price-1y font green" : "coin-price-1y font red"}>{roi != null ? `${roi.toFixed(2)} %`:"No data yet" } </td> */}
-                                <td className="coin-volume font">$ {numberWithCommas(total_volume)}</td>
-                                <td className="coin-market font">$ {numberWithCommas(market_cap)}</td>
+                                <div className="coin-volume font">$ {numberWithCommas(total_volume)}</div>
+                                <div className="coin-market font">$ {numberWithCommas(market_cap)}</div>
                             </span>
-                        </tr>
+                        </div>
                 </Link>  
             );
 
     }):[];
 
 
+
+
     return (
-        <CoinsSection>
-            
-                <table className="table">
-                    <tr className="table-labels">
-                        <span className="flex-group-1">
-                            <th className="rank text">Rank</th>
-                            <th className="coin text">Coin</th>
-                            <th className="price text">Price</th>
-                        </span>
-                        <span className="flex-group-2">
-                            <th className="price-1h text">1h</th>
-                            <th className="price-24h text">24h</th>
-                            <th className="price-7d text">7d</th>
-                            <th className="price-30d text">30d</th>
-                        </span>
-                        <span className="flex-group-3">
-                            <th className="price-volume text">24h Volume</th>
-                            <th className="market-cap text">Market Cap</th>
-                        </span>
-                        {/* <th className="price-1y text">1y</th> */}
-                    
-                    </tr>
-                </table>
-                <table className="coins-table">
+        <CoinsSection>            
+                <div className="table">
+                    <div className="table-container">
+                        <div className="flex-group-1">
+                            <div className="rank text">Rank</div>
+                            <div className="coin text">Coin</div>
+                            <div className="price text">Price</div>
+                        </div>
+                        <div className="flex-group-2">
+                            <div className="price-1h text">1h</div>
+                            <div className="price-24h text">24h</div>
+                            <div className="price-7d text">7d</div>
+                            <div className="price-30d text">30d</div>
+                        </div>
+                        <div className="flex-group-3">
+                            <div className="price-volume text">24h Volume</div>
+                            <div className="market-cap text">Market Cap</div>
+                        </div>
+                    </div>
+                </div>
+                <div className="coins-table">
                     {displayCoins}
-                </table>
+                </div>
            
           
         </CoinsSection>

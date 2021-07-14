@@ -5,10 +5,11 @@ export const CoinsSection = styled.section`
 
 
 
+    
+    
 
     .table{
         padding:  1rem 0;
-        width: 100%;
         font-weight: bold;
         border-bottom: 2px solid rgba(0, 0, 0,0.2);
         }
@@ -16,9 +17,10 @@ export const CoinsSection = styled.section`
 
     .row{
         display: flex;
+        
     }
    
-     .table-labels{
+     .table-container{
         display: flex;
      }       
 
@@ -30,7 +32,7 @@ export const CoinsSection = styled.section`
 
     .flex-group-2{
         display: flex;
-        width: 60rem;
+        width: 50rem;
         justify-content: space-around;
     }
     .flex-group-3{
@@ -70,13 +72,15 @@ export const CoinsSection = styled.section`
         display: flex;
         justify-content:start;
         align-items: center;
+    
     }
 
     .coin-image-container{
         display: flex;
         align-items: center;
-        margin-left: 6rem;
-        width: 30rem;
+        margin-left: 4rem;
+        width:30rem;
+        
     }
 
     .link-container{
@@ -88,7 +92,7 @@ export const CoinsSection = styled.section`
  
 
     .font{
-        font-size: 1.8rem;  
+        font-size: 1.6rem;  
         color:#000;
     }
 
@@ -99,7 +103,7 @@ export const CoinsSection = styled.section`
 
 
     .coin-name{
-        margin-left: 2rem;
+        margin-left: 1rem;
     }
     
     .coin-symbol{
@@ -117,14 +121,14 @@ export const CoinsSection = styled.section`
         display: flex;
         align-items: center;
         justify-content: space-around;     
-        width: 60rem;
+        width: 50rem;
     
     }
 
     .flex-group-coin-3{
         display: flex;
         justify-content:space-around;
-        width: 40rem;
+        width: 38rem;
     }
 
     .green{
