@@ -6,11 +6,29 @@ export const SubHeaderSection  = styled.section`
 
     .container{
         display: flex;
-        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+        gap: 6rem;
+    }
+
+    .market-cap{
+        display: flex;
+        align-items: center;
+      
     }
 
     .market-cap-text{
-        margin-right: 2rem;
+      margin-right: 2rem;
+      
+    }
+
+    .market-cap-text-number{
+        font-weight: normal;
+    }
+    
+    .volume-24text{
+        font-weight: normal;
+
     }
 
     .icon{
@@ -20,4 +38,41 @@ export const SubHeaderSection  = styled.section`
     .text-up{
         color:green;
     }
+
+    .market-cap-percentage{
+        display: flex;
+    }
+
+    .text-general{
+        font-weight:bold;
+        font-size:1.4rem;
+    }
+
+    .red{
+        color:red;
+    }
+
+    .green{
+        color:green;
+    }
+
+    .coins{
+      
+    }
+    .exchanges{
+      
+       
+    }
+
+   
+
+    .percentage-text{
+    
+    }
+
+    .volume-24{
+       
+    
+    }
+
 `

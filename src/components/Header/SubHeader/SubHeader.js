@@ -10,19 +10,20 @@ const SubHeader = () => {
     const {coinsCount,exchangesCount,globalData,coinsDominance,marketCap24hVolume,marketCap,marketCap24hVolumePercentage} = useCoinContext();
     // console.log(globalData.data.market_cap_change_percentage_24h_usd);
     // console.log(marketCap.usd)
-    // console.log(marketCap24hVolume.usd)
-    console.log(coinsCount.length)
+    console.log(marketCap24hVolume.usd)
+    // console.log(coinsCount.length)
 
     let percentage = marketCap24hVolumePercentage ? Number.parseInt(numberWithCommas(marketCap24hVolumePercentage.toFixed(2))): ""
     let percentageIcon = null;
-    console.log(typeof percentage)
+
 
     if (typeof percentage === "number" ) {
 
         if (percentage > 0) {
-            percentageIcon =  <FaLevelUpAlt className="icon-up green icon"><span className="text-up">{percentage}</span></FaLevelUpAlt>
+           
+            percentageIcon =  <FaLevelUpAlt className="icon-up green icon">{percentage}</FaLevelUpAlt>
         }else{
-            percentageIcon =  <FaLevelDownAlt className="icon-down red icon"><span className="text-down">{percentage}</span></FaLevelDownAlt>
+            percentageIcon =  <FaLevelDownAlt className="icon-down red icon">{percentage}</FaLevelDownAlt>
 
         }
     }
@@ -31,16 +32,20 @@ const SubHeader = () => {
     return (
         <SubHeaderSection>
             <div className="container">
-                <div className="coins">Coins: <Link to="/">{coinsCount.length > 0? coinsCount.length :""}</Link></div>
-                <div className="exchanges">Exchanges: <Link to="/exchanges">{exchangesCount.length > 0? exchangesCount.length :""}</Link></div>
+                <div className="coins text-general">Coins: <Link to="/">{coinsCount.length > 0? coinsCount.length :""}</Link></div>
+                <div className="exchanges text-general">Exchanges: <Link to="/exchanges">{exchangesCount.length > 0? exchangesCount.length :""}</Link></div>
                 <div className="market-cap">
-                    <span className="market-cap-text">
-                     {/* Market Cap:   ${ marketCap ? numberWithCommas(marketCap.usd.toFixed(0)):""} */}
+                    <span className="market-cap-text text-general">
+                     Market Cap:   { marketCap ? <span className="market-cap-text-number">${numberWithCommas(marketCap.usd.toFixed(0))}</span> :""}
                     </span>
-                    <span className="market-cap-percentage">
-                        {percentageIcon}
-                    </span>
-                </div>
+                    <span className="market-cap-percentage text-general">
+                        <span className={percentage > 0 ? "percentage-text green text-general" : "percentage-text red text-general"}>{`${percentage} %`}</span>
+                           {percentageIcon}
+                     </span> 
+                </div>                              
+                <div className="volume-24 text-general">
+                24h Vol: { marketCap24hVolume.usd ? <span className="volume-24text">${numberWithCommas(marketCap24hVolume.usd.toFixed(0))}</span> :"" }
+                </div>             
             </div>
         </SubHeaderSection>
     )

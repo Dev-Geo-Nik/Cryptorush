@@ -31,7 +31,7 @@ const Coins = () => {
                             <span className="flex-group-coin-1">
                                 <div className="coin-rank font">{market_cap_rank}</div>
                                 <div className="coin-image-container font"><img src={image} alt={`image of ${symbol}`} className="coin-image" />   <div className="coin-name font">{name}</div>   <div className="coin-symbol font">{symbol.toUpperCase()}</div> </div>                  
-                                <div className="coin-price font">{current_price}</div>
+                                <div className="coin-price font">$ {current_price}</div>
                             </span>
                             <span className="flex-group-coin-2">
                                 <div className={chart1h.toFixed(2) > 0 ? "coin-price-1h font green" : "coin-price-1h font red"}>{chart1h.toFixed(2) } %</div>
