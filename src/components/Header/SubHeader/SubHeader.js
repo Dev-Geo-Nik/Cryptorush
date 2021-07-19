@@ -29,6 +29,8 @@ const SubHeader = () => {
     }
 
 
+   
+
     return (
         <SubHeaderSection>
             <div className="container">
@@ -39,7 +41,7 @@ const SubHeader = () => {
                      Market Cap:   { marketCap ? <span className="market-cap-text-number">${numberWithCommas(marketCap.usd.toFixed(0))}</span> :""}
                     </span>
                     <span className="market-cap-percentage text-general">
-                        <span className={percentage > 0 ? "percentage-text green text-general" : "percentage-text red text-general"}>{`${percentage} %`}</span>
+                        <span className={percentage > 0 ? "percentage-text green text-general" : "percentage-text red text-general"}>{  percentage &&`${percentage.toFixed(2)} %`}</span>
                            {percentageIcon}
                      </span> 
                 </div>                              
