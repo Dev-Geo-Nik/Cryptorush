@@ -25,7 +25,7 @@ const Coins = () => {
             market_cap
               } = coin;
               
-            console.log(chart1h);       
+                
             return(
                 <Link to ={`/${id}`} key={id} className="link-container">
                         <div className="row" >

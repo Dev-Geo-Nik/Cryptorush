@@ -8,10 +8,7 @@ import { FaLevelUpAlt ,FaLevelDownAlt } from "react-icons/fa";
 
 const SubHeader = () => {
     const {coinsCount,exchangesCount,globalData,coinsDominance,marketCap24hVolume,marketCap,marketCap24hVolumePercentage} = useCoinContext();
-    // console.log(globalData.data.market_cap_change_percentage_24h_usd);
-    // console.log(marketCap.usd)
-    console.log(marketCap24hVolume.usd)
-    // console.log(coinsCount.length)
+    
 
     let percentage = marketCap24hVolumePercentage ? Number.parseInt(numberWithCommas(marketCap24hVolumePercentage.toFixed(2))): ""
     let percentageIcon = null;
@@ -34,11 +31,11 @@ const SubHeader = () => {
     return (
         <SubHeaderSection>
             <div className="container">
-                <div className="coins text-general">Coins: <Link to="/">{coinsCount.length > 0? coinsCount.length :""}</Link></div>
-                <div className="exchanges text-general">Exchanges: <Link to="/exchanges">{exchangesCount.length > 0? exchangesCount.length :""}</Link></div>
+                <div className="coins text-general">Coins: <Link to="/">{ coinsCount.length }</Link></div>
+                <div className="exchanges text-general">Exchanges: <Link to="/exchanges">{exchangesCount.length }</Link></div>
                 <div className="market-cap">
                     <span className="market-cap-text text-general">
-                     Market Cap:   { marketCap ? <span className="market-cap-text-number">${numberWithCommas(marketCap.usd.toFixed(0))}</span> :""}
+                     Market Cap:   { marketCap && <span className="market-cap-text-number">${numberWithCommas(marketCap.usd.toFixed(0))}</span> }
                     </span>
                     <span className="market-cap-percentage text-general">
                         <span className={percentage > 0 ? "percentage-text green text-general" : "percentage-text red text-general"}>{  percentage &&`${percentage.toFixed(2)} %`}</span>
@@ -46,7 +43,7 @@ const SubHeader = () => {
                      </span> 
                 </div>                              
                 <div className="volume-24 text-general">
-                24h Vol: { marketCap24hVolume.usd ? <span className="volume-24text">${numberWithCommas(marketCap24hVolume.usd.toFixed(0))}</span> :"" }
+                24h Vol: { marketCap24hVolume.usd && <span className="volume-24text">${numberWithCommas(marketCap24hVolume.usd.toFixed(0))}</span> }
                 </div>             
             </div>
         </SubHeaderSection>
