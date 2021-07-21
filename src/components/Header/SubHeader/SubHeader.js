@@ -8,8 +8,6 @@ import { FaLevelUpAlt ,FaLevelDownAlt } from "react-icons/fa";
 
 const SubHeader = () => {
     const {coinsCount,exchangesCount,globalData,coinsDominance,marketCap24hVolume,marketCap,marketCap24hVolumePercentage} = useCoinContext();
-    
-
     let percentage = marketCap24hVolumePercentage ? Number.parseInt(numberWithCommas(marketCap24hVolumePercentage.toFixed(2))): ""
     let percentageIcon = null;
 
@@ -44,7 +42,14 @@ const SubHeader = () => {
                 </div>                              
                 <div className="volume-24 text-general">
                 24h Vol: { marketCap24hVolume.usd && <span className="volume-24text">${numberWithCommas(marketCap24hVolume.usd.toFixed(0))}</span> }
-                </div>             
+                </div>
+                <div className="dominance text-general">
+                Dominance:  {coinsDominance.btc && <span className="dominance-text">{`BTC:${coinsDominance.btc.toFixed(2)}%  ETH:${coinsDominance.eth.toFixed(2)}%`}</span>}
+                </div>
+                <div className="currency text-general">
+                    Currency: usd
+                </div>
+                      
             </div>
         </SubHeaderSection>
     )

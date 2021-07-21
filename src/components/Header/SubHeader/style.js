@@ -7,8 +7,8 @@ export const SubHeaderSection  = styled.section`
     .container{
         display: flex;
         align-items: center;
-        justify-content: flex-start;
-        gap: 6rem;
+        justify-content: space-between;
+        /* gap: 6rem; */
     }
 
     .market-cap{
@@ -46,6 +46,10 @@ export const SubHeaderSection  = styled.section`
     .text-general{
         font-weight:bold;
         font-size:1.4rem;
+    }
+
+    .dominance-text{
+        font-weight: normal;
     }
 
     .red{
