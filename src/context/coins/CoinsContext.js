@@ -12,7 +12,6 @@ const initialState = {
     fiatCurrency:"usd",
     coinsCount:0,
     exchangesCount:0,
-    globalData:[],
     marketCap:0,
     marketCap24hVolume:[],
     marketCap24hVolumePercentage:0,

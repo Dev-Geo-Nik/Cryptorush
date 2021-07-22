@@ -5,16 +5,18 @@ import {useCoinContext} from "../../../context/coins/CoinsContext";
 const Dominance = () => {
     const {coinsDominance} = useCoinContext();
     
-   const dominanceArray = Object.keys(coinsDominance);
-    console.log(dominanceArray);
+   const dominanceArray = Object.entries(coinsDominance)
     
-    const displayCoinsDominance  =  dominanceArray.length > 0 ? dominanceArray.map((c,index)=>{
-        const {coin,value} = c;
-        console.log(coin)
+    const displayCoinsDominance  =  dominanceArray.length > 0 ? dominanceArray.map((coin,index)=>{
+
+        if (coin[0] === "btc" || coin[0] === "eth") {
+           return;
+        }
 
         return(
             <div className="coin-item" key={index}>
-                    <span className="coin-text">{coin}</span>
+                    <span className="coin-text">{coin[0]} :</span>
+                    <span className="coin-number">{coin[1].toFixed(2)}%</span>
             </div>            
         )
 
@@ -25,7 +27,7 @@ const Dominance = () => {
 
     return (
         <DominanceDiv>
-            <h3>Dominance of market  leaders</h3>
+            <h3 className="title">Dominance of most popular coins</h3>
             <div className="coins-container">
                 {displayCoinsDominance}
             </div>

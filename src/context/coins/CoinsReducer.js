@@ -12,7 +12,6 @@ export default (state,action) =>{
 
         return({
                ...state,
-               globalData:action.payload,
                coinsDominance:action.payload.data.market_cap_percentage,
                marketCap:action.payload.data.total_market_cap,
                marketCap24hVolume:action.payload.data.total_volume,
