@@ -8,7 +8,7 @@ import {LOAD_ALL_COINS,GET_NUMBER_OF_ALL_COINS,GET_NUMBER_OF_ALL_EXCHANGES,GET_G
 const initialState = {
 
     allCoins: [],
-    counter:1,
+    currentPage:1,
     fiatCurrency:"usd",
     coinsCount:0,
     exchangesCount:0,
@@ -45,7 +45,7 @@ export const CoinsProvider = ({children}) =>{
        try {
 
 
-           const res = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${state.fiatCurrency}&order=market_cap_desc&per_page=100&page=${state.counter}&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C30d%2C1y`);
+           const res = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${state.fiatCurrency}&order=market_cap_desc&per_page=100&page=${state.currentPage}&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C30d%2C1y`);
         
             if (res.status >= 200 || res.status <= 299 ) {
 
@@ -119,11 +119,16 @@ export const CoinsProvider = ({children}) =>{
     }
 
 
+
+    const updateCurrentPage = async ()=>{
+        
+
+    }
    
  
 
     return (
-        <CoinContext.Provider value={{...state}}>
+        <CoinContext.Provider value={{...state,updateCurrentPage}}>
             {children}
         </CoinContext.Provider>
     )

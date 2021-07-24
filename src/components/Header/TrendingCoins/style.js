@@ -27,7 +27,7 @@ export const TrendingCoinsSection = styled.section`
 
     .coin-container:hover{
         transform: scale(1.1);
-        border: 1px solid black;
+        border: 1px solid    rgba(59,130,246,0.5);
     }
 
     .coin-image{

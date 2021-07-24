@@ -5,9 +5,11 @@ import {useCoinContext} from "../../../context/coins/CoinsContext";
 const Dominance = () => {
     const {coinsDominance} = useCoinContext();
     
-   const dominanceArray = Object.entries(coinsDominance)
+   let dominanceArray = [];
+ 
+    dominanceArray = Object.entries(coinsDominance)
     
-    const displayCoinsDominance  =  dominanceArray.length > 0 ? dominanceArray.map((coin,index)=>{
+    const displayCoinsDominance  =  dominanceArray.map((coin,index)=>{
 
         if (coin[0] === "btc" || coin[0] === "eth") {
            return;
@@ -20,7 +22,7 @@ const Dominance = () => {
             </div>            
         )
 
-    }):[]
+    })
 
     
     

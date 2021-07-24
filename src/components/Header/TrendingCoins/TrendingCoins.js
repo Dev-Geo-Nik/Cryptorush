@@ -6,13 +6,14 @@ import { Link } from 'react-router-dom';
 const TrendingCoins = () => {
     const {trendingCoins} = useCoinContext();
 
-    const trendingCoinsArray = trendingCoins.coins && Object.entries(trendingCoins.coins);
- 
-
-
     
-
-    const displayTrendingCoins = trendingCoinsArray  && trendingCoinsArray.map((coin,index)=>{
+    let displayTrendingCoins = [];
+    
+    if (trendingCoins.coins) {
+        
+    const trendingCoinsArray = trendingCoins.coins && Object.entries(trendingCoins.coins);
+            
+     displayTrendingCoins =  trendingCoinsArray.map((coin,index)=>{
         const {1:{item:{id,name,small,symbol,price_btc}}} = coin;
         console.log(coin)
        
@@ -28,6 +29,9 @@ const TrendingCoins = () => {
                 </Link>
              )
     })
+    }
+    
+
 
     return (
         <TrendingCoinsSection>

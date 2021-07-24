@@ -29,8 +29,8 @@ const SubHeader = () => {
     return (
         <SubHeaderSection>
             <div className="container">
-                <div className="coins text-general">Coins: <Link to="/">{ coinsCount.length }</Link></div>
-                <div className="exchanges text-general">Exchanges: <Link to="/exchanges">{exchangesCount.length }</Link></div>
+                <div className="coins text-general">Coins: <Link className="coins-text" to="/">{ coinsCount.length }</Link></div>
+                <div className="exchanges text-general">Exchanges: <Link className="exchanges-text" to="/exchanges">{exchangesCount.length }</Link></div>
                 <div className="market-cap">
                     <span className="market-cap-text text-general">
                      Market Cap:   { marketCap && <span className="market-cap-text-number">${numberWithCommas(marketCap.usd.toFixed(0))}</span> }
