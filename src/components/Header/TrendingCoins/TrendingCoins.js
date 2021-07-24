@@ -6,27 +6,35 @@ import { Link } from 'react-router-dom';
 const TrendingCoins = () => {
     const {trendingCoins} = useCoinContext();
 
-    const trendingCoinsArray = trendingCoins.length > 0 && Object.entries(trendingCoins.coins);
-    // console.log(trendingCoinsArray[0])
+    const trendingCoinsArray = trendingCoins.coins && Object.entries(trendingCoins.coins);
+ 
 
-    console.log(trendingCoinsArray)
+
     
 
-    const displayTrendingCoins = trendingCoinsArray.length > 0 ? trendingCoinsArray.map((coin)=>{
-        const { coin_id ,name,symbol,small} = coin;
-        // console.log(coin)
+    const displayTrendingCoins = trendingCoinsArray  && trendingCoinsArray.map((coin,index)=>{
+        const {1:{item:{id,name,small,symbol,price_btc}}} = coin;
+        console.log(coin)
+       
        
         return (
-                <div></div>
-                // <Link to={`/${name}`} key={coin_id}>
-                //     <img src={small} alt={`${name} image`} className="coin-image" />
-                // </Link>
+               
+                <Link to={`/${name}`} key={id} className="coin-container">       
+                       <img src={small} alt={`${name} image`} className="coin-image" />
+                       <div className="text-container">
+                            <h5  className="name">{name}</h5>
+                            <p className="symbol">{symbol}</p>      
+                       </div>
+                </Link>
              )
-    }):[];
+    })
 
     return (
         <TrendingCoinsSection>
-          {displayTrendingCoins}  
+            <h3 className="title">Trending Coins</h3>
+            <div className="coins-container">
+                 {displayTrendingCoins}  
+            </div>
         </TrendingCoinsSection>
     )
 }

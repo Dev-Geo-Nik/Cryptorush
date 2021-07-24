@@ -8,5 +8,5 @@ export const Nav  = styled.nav`
     align-items: center;
     padding: 1rem 0;
  
-
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 `

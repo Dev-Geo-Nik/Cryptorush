@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const SubHeaderSection  = styled.section`
     padding: 2rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 
     .container{
         display: flex;

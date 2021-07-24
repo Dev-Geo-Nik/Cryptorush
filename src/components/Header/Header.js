@@ -11,13 +11,9 @@ const Header = () => {
     return (
         <HeaderTag>
           <Navigation/>
-          <hr />
-          <SubHeader/>
-          <hr />
-          <Dominance/>
-          <hr />
           <TrendingCoins/>
-          <hr />
+          <Dominance/>    
+          <SubHeader/>        
         </HeaderTag>
     )
 }
