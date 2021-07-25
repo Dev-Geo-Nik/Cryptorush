@@ -1,5 +1,17 @@
 //import actions
-import {LOAD_ALL_COINS,GET_NUMBER_OF_ALL_COINS,GET_NUMBER_OF_ALL_EXCHANGES,GET_GLOBAL_DATA,TOP_TRENDING_COINS,UPDATE_CURRENT_PAGE ,CHANGE_PAGE_COINS} from "../Actions";
+import {LOAD_ALL_COINS,
+    GET_NUMBER_OF_ALL_COINS,
+    GET_NUMBER_OF_ALL_EXCHANGES,
+    GET_GLOBAL_DATA,
+    TOP_TRENDING_COINS,
+    UPDATE_CURRENT_PAGE ,
+    CHANGE_PAGE_COINS,
+    NEXT_PAGE,
+    SET_NEXT_PAGE,
+    SET_PREVIOUS_PAGE,
+    PREVIOUS_PAGE,
+    
+} from "../Actions";
 
 export default (state,action) =>{
 
@@ -9,6 +21,24 @@ export default (state,action) =>{
     if (action.type === TOP_TRENDING_COINS)  return({...state,trendingCoins:action.payload });
     if (action.type === UPDATE_CURRENT_PAGE)  return({...state,currentPage:action.payload });
     if (action.type === CHANGE_PAGE_COINS)  return({...state,allCoins:action.payload });
+    if (action.type === NEXT_PAGE)  return({...state,currentPage:action.payload.pageNum, isButtonDisabled:action.payload.button});
+    if (action.type === PREVIOUS_PAGE)  return({...state,currentPage:action.payload });
+    
+    
+    if (action.type === SET_NEXT_PAGE)  return({
+        ...state,
+        isButtonDisabled:action.payload.button,
+        currentPage:action.payload.pageNum,
+        maxPageNumberLimit:action.payload.max,
+        minPageNumberLimit:action.payload.min,
+    });
+
+    if (action.type === SET_PREVIOUS_PAGE)  return({
+        ...state,
+        currentPage:action.payload.pageNumber,
+        maxPageNumberLimit:action.payload.max,
+        minPageNumberLimit:action.payload.min,
+    });
 
     if (action.type === GET_GLOBAL_DATA) {
 

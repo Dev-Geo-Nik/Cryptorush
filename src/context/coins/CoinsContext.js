@@ -3,12 +3,29 @@ import   reducer from "./CoinsReducer";
 
 
 //import actions
-import {LOAD_ALL_COINS,GET_NUMBER_OF_ALL_COINS,GET_NUMBER_OF_ALL_EXCHANGES,GET_GLOBAL_DATA,TOP_TRENDING_COINS,UPDATE_CURRENT_PAGE,CHANGE_PAGE_COINS} from "../Actions";
+import {LOAD_ALL_COINS,
+    GET_NUMBER_OF_ALL_COINS,
+    GET_NUMBER_OF_ALL_EXCHANGES,
+    GET_GLOBAL_DATA,
+    TOP_TRENDING_COINS,
+    UPDATE_CURRENT_PAGE,
+    CHANGE_PAGE_COINS,
+    NEXT_PAGE,
+    SET_NEXT_PAGE,
+    PREVIOUS_PAGE,
+    SET_PREVIOUS_PAGE,
+   
+} from "../Actions";
 
 const initialState = {
 
     allCoins: [],
     currentPage:1,
+    coinsPerPage:100,
+    pageNumberLimit:5,
+    maxPageNumberLimit:5,
+    minPageNumberLimit:1,
+    isButtonDisabled:true,
     fiatCurrency:"usd",
     coinsCount:0,
     exchangesCount:0,
@@ -41,7 +58,7 @@ export const CoinsProvider = ({children}) =>{
 
     useEffect (()=>{
         fetchCoinsPage()
-    },[state.currentPage])
+    },[state.currentPage,state.maxPageNumberLimit])
 
    const fetchAllCoins = async  () =>{
     
@@ -122,12 +139,39 @@ export const CoinsProvider = ({children}) =>{
     }
     }
 
+    const handlerPreviousButton = ()=>{
+    
 
+        if (state.currentPage - 1 >= 1 ) {
+       
+            dispatch({type:SET_PREVIOUS_PAGE,payload:{max:state.maxPageNumberLimit - state.pageNumberLimit,min: state.minPageNumberLimit - state.pageNumberLimit ,pageNumber:state.currentPage - 1}})
+            
+        }else{
+            if (state.currentPage > 0) {
+                
+                dispatch({type:PREVIOUS_PAGE,payload:state.currentPage - 1})
+            }
+           
+        }
+    }
+
+
+    const handlerNextButton =  ()=>{
+      
+        
+        if (state.currentPage + 1 > state.maxPageNumberLimit) {
+            dispatch({type:SET_NEXT_PAGE,payload:{max:state.maxPageNumberLimit + state.pageNumberLimit,min: state.minPageNumberLimit + state.pageNumberLimit ,pageNum:state.currentPage + 1,button:false}})
+            
+        }else{
+            dispatch({type:NEXT_PAGE,payload:{pageNum:state.currentPage + 1,button:false}})
+          
+        }
+    }
 
     const updateCurrentPage =  (e)=>{
-        console.log()
         
-        dispatch({type:UPDATE_CURRENT_PAGE,payload:e.target.closest("li").innerText})
+            dispatch({type:UPDATE_CURRENT_PAGE,payload:e.target.closest("li").innerText})
+        
     }
 
     const fetchCoinsPage = async ()=>{
@@ -149,7 +193,7 @@ export const CoinsProvider = ({children}) =>{
  
 
     return (
-        <CoinContext.Provider value={{...state,updateCurrentPage,fetchCoinsPage}}>
+        <CoinContext.Provider value={{...state,updateCurrentPage,fetchCoinsPage,handlerNextButton,handlerPreviousButton}}>
             {children}
         </CoinContext.Provider>
     )

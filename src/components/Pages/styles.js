@@ -53,4 +53,8 @@ export const PagesSection = styled.section`
     .active{
         background: rgba(59,130,246,0.5);
     }
+    
+    .list-item-1{
+        border-left: 1px solid rgba(0, 0, 0, 0.2);
+    }
 `
