@@ -10,12 +10,12 @@ const TrendingCoins = () => {
     let displayTrendingCoins = [];
     
     if (trendingCoins.coins) {
-        
+
     const trendingCoinsArray = trendingCoins.coins && Object.entries(trendingCoins.coins);
             
      displayTrendingCoins =  trendingCoinsArray.map((coin,index)=>{
         const {1:{item:{id,name,small,symbol,price_btc}}} = coin;
-        console.log(coin)
+        // console.log(coin)
        
        
         return (

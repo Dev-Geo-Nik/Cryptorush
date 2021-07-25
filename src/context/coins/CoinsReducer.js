@@ -1,5 +1,5 @@
 //import actions
-import {LOAD_ALL_COINS,GET_NUMBER_OF_ALL_COINS,GET_NUMBER_OF_ALL_EXCHANGES,GET_GLOBAL_DATA,TOP_TRENDING_COINS} from "../Actions";
+import {LOAD_ALL_COINS,GET_NUMBER_OF_ALL_COINS,GET_NUMBER_OF_ALL_EXCHANGES,GET_GLOBAL_DATA,TOP_TRENDING_COINS,UPDATE_CURRENT_PAGE ,CHANGE_PAGE_COINS} from "../Actions";
 
 export default (state,action) =>{
 
@@ -7,6 +7,8 @@ export default (state,action) =>{
     if (action.type === GET_NUMBER_OF_ALL_COINS)  return({...state,coinsCount:action.payload });
     if (action.type === GET_NUMBER_OF_ALL_EXCHANGES)  return({...state,exchangesCount:action.payload });
     if (action.type === TOP_TRENDING_COINS)  return({...state,trendingCoins:action.payload });
+    if (action.type === UPDATE_CURRENT_PAGE)  return({...state,currentPage:action.payload });
+    if (action.type === CHANGE_PAGE_COINS)  return({...state,allCoins:action.payload });
 
     if (action.type === GET_GLOBAL_DATA) {
 

@@ -3,7 +3,7 @@ import   reducer from "./CoinsReducer";
 
 
 //import actions
-import {LOAD_ALL_COINS,GET_NUMBER_OF_ALL_COINS,GET_NUMBER_OF_ALL_EXCHANGES,GET_GLOBAL_DATA,TOP_TRENDING_COINS} from "../Actions";
+import {LOAD_ALL_COINS,GET_NUMBER_OF_ALL_COINS,GET_NUMBER_OF_ALL_EXCHANGES,GET_GLOBAL_DATA,TOP_TRENDING_COINS,UPDATE_CURRENT_PAGE,CHANGE_PAGE_COINS} from "../Actions";
 
 const initialState = {
 
@@ -38,6 +38,10 @@ export const CoinsProvider = ({children}) =>{
     
     },[])
     
+
+    useEffect (()=>{
+        fetchCoinsPage()
+    },[state.currentPage])
 
    const fetchAllCoins = async  () =>{
     
@@ -120,15 +124,32 @@ export const CoinsProvider = ({children}) =>{
 
 
 
-    const updateCurrentPage = async ()=>{
+    const updateCurrentPage =  (e)=>{
+        console.log()
         
+        dispatch({type:UPDATE_CURRENT_PAGE,payload:e.target.closest("li").innerText})
+    }
 
+    const fetchCoinsPage = async ()=>{
+        try {
+
+
+            const res = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${state.fiatCurrency}&order=market_cap_desc&per_page=100&page=${state.currentPage}&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C30d%2C1y`);
+         
+             if (res.status >= 200 || res.status <= 299 ) {
+ 
+                 const data = await res.json();
+                 dispatch({type:CHANGE_PAGE_COINS ,payload:data});
+             }
+         } catch (error) {
+                 console.log(error)
+         }
     }
    
  
 
     return (
-        <CoinContext.Provider value={{...state,updateCurrentPage}}>
+        <CoinContext.Provider value={{...state,updateCurrentPage,fetchCoinsPage}}>
             {children}
         </CoinContext.Provider>
     )

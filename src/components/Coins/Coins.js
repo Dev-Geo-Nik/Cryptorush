@@ -7,10 +7,10 @@ import {numberWithCommas} from "../../util/helpers";
 const Coins = () => {
     const {allCoins,coinsCount,exchangesCount} = useCoinContext();
     // console.log(allCoins,coinsCount,exchangesCount)
-    console.log(allCoins)
+    // console.log(allCoins)
 
     let displayCoins = []
-    
+
     if (allCoins) {
         displayCoins = allCoins.map((coin)=>{
 
@@ -39,10 +39,10 @@ const Coins = () => {
                                     <div className="coin-price font">$ {current_price}</div>
                                 </span>
                                 <span className="flex-group-coin-2">
-                                    <div className={chart1h.toFixed(2) > 0 ? "coin-price-1h font green" : "coin-price-1h font red"}>{chart1h.toFixed(2) } %</div>
-                                    <div className={chart24h.toFixed(2) > 0 ? "coin-price-24h font green" : "coin-price-24h font red"}>{ chart24h.toFixed(2) } %</div>
-                                    <div className={chart7d.toFixed(2) > 0 ? "coin-price-7d font green" : "coin-price-7d font red"}>{  chart7d.toFixed(2) } %</div>
-                                    <div className={chart30d.toFixed(2) > 0 ? "coin-price-30d font green" : "coin-price-30d font red"}>{ chart30d.toFixed(2) } %</div>
+                                    <div className={chart1h && chart1h.toFixed(2) > 0 ? "coin-price-1h font green" : "coin-price-1h font red"}>{chart1h && chart1h.toFixed(2) } %</div>
+                                    <div className={chart24h && chart24h.toFixed(2) > 0 ? "coin-price-24h font green" : "coin-price-24h font red"}>{chart24h && chart24h.toFixed(2) } %</div>
+                                    <div className={chart7d && chart7d.toFixed(2) > 0 ? "coin-price-7d font green" : "coin-price-7d font red"}>{chart7d && chart7d.toFixed(2) } %</div>
+                                    <div className={chart30d && chart30d.toFixed(2) > 0 ? "coin-price-30d font green" : "coin-price-30d font red"}>{chart30d && chart30d.toFixed(2) } %</div>
                                 </span>
                                 <span className="flex-group-coin-3">
                                     <div className="coin-volume font">$ {numberWithCommas(total_volume)}</div>
@@ -83,7 +83,7 @@ const Coins = () => {
                     </div>
                 </div>
                 <div className="coins-table">
-                    {displayCoins}
+                    { displayCoins}
                 </div>
            
           
