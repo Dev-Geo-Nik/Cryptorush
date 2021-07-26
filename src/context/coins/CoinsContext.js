@@ -14,6 +14,7 @@ import {LOAD_ALL_COINS,
     SET_NEXT_PAGE,
     PREVIOUS_PAGE,
     SET_PREVIOUS_PAGE,
+    PREVIOUS_PAGE_BOOL
    
 } from "../Actions";
 
@@ -142,14 +143,19 @@ export const CoinsProvider = ({children}) =>{
     const handlerPreviousButton = ()=>{
     
 
-        if (state.currentPage - 1 >= 1 ) {
+        if (state.currentPage - 1 >= 5 ) {
        
             dispatch({type:SET_PREVIOUS_PAGE,payload:{max:state.maxPageNumberLimit - state.pageNumberLimit,min: state.minPageNumberLimit - state.pageNumberLimit ,pageNumber:state.currentPage - 1}})
             
         }else{
-            if (state.currentPage > 0) {
+            if (state.currentPage >= 1) {
+                
+               
                 
                 dispatch({type:PREVIOUS_PAGE,payload:state.currentPage - 1})
+            }else{
+                
+                dispatch({type:PREVIOUS_PAGE_BOOL,payload:{pageNum:state.currentPage - 1 ,button:true}})
             }
            
         }

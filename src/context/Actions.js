@@ -10,5 +10,6 @@ export const NEXT_PAGE = "NEXT_PAGE";
 export const PREVIOUS_PAGE = "PREVIOUS_PAGE";
 export const SET_NEXT_PAGE = "SET_NEXT_PAGE";
 export const SET_PREVIOUS_PAGE = "SET_PREVIOUS_PAGE";
+export const PREVIOUS_PAGE_BOOL = "PREVIOUS_PAGE_BOOL";
 
 
