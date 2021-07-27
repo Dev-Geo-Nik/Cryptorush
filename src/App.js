@@ -1,19 +1,19 @@
 import React from 'react';
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
-import {AppSection} from "./AppStyle";
-
+import {Footer} from "./components";
 import {Home ,Error } from "./routers";
 
 function App() {
   return (
-   <AppSection>
+   <section>
       <Router>
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route exact path="*" component={Error}/>
         </Switch>
       </Router>
-   </AppSection> 
+     <Footer/>
+   </section> 
   );
 }
 

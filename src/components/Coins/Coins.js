@@ -3,16 +3,23 @@ import {CoinsSection} from "../Coins/style";
 import {useCoinContext} from "../../context/coins/CoinsContext";
 import {Link} from "react-router-dom";
 import {numberWithCommas} from "../../util/helpers";
+import Spinner from "../Spinner/Spinner";
+
+
 
 const Coins = () => {
-    const {allCoins,coinsCount,exchangesCount} = useCoinContext();
+    const {allCoins,coinsCount,exchangesCount,isLoading,setLoading} = useCoinContext();
     // console.log(allCoins,coinsCount,exchangesCount)
     // console.log(allCoins)
 
     let displayCoins = []
 
+   console.log(isLoading)
+
     if (allCoins) {
         displayCoins = allCoins.map((coin)=>{
+
+      
 
             const {
                 id,
@@ -83,10 +90,10 @@ const Coins = () => {
                     </div>
                 </div>
                 <div className="coins-table">
-                    { displayCoins}
+                    { displayCoins ? displayCoins :setLoading(false) }
                 </div>
-           
-          
+
+                {isLoading === true ? <Spinner /> : "" }
         </CoinsSection>
     )
 }

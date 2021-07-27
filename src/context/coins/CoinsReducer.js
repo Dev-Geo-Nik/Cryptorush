@@ -10,7 +10,8 @@ import {LOAD_ALL_COINS,
     SET_NEXT_PAGE,
     SET_PREVIOUS_PAGE,
     PREVIOUS_PAGE,
-    PREVIOUS_PAGE_BOOL
+    PREVIOUS_PAGE_BOOL,
+    SET_LOADING
     
 } from "../Actions";
 
@@ -25,6 +26,8 @@ export default (state,action) =>{
     if (action.type === NEXT_PAGE)  return({...state,currentPage:action.payload.pageNum, isButtonDisabled:action.payload.button});
     if (action.type === PREVIOUS_PAGE)  return({...state,currentPage:action.payload });
     if (action.type === PREVIOUS_PAGE_BOOL)  return({...state,currentPage:action.payload.pageNum, isButtonDisabled:action.payload.button});
+    if (action.type === SET_LOADING)  return({...state,isLoading:action.payload});
+    
     
     
     if (action.type === SET_NEXT_PAGE)  return({

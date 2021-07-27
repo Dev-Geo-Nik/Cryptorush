@@ -7,7 +7,8 @@ import {useCoinContext} from "../../context/coins/CoinsContext";
 
 
 const Pages = () => {
-    const { currentPage,
+    const { 
+        currentPage,
         updateCurrentPage,
         fetchCoinsPage,
         allCoins,
@@ -27,8 +28,8 @@ const Pages = () => {
         pages.push(i); 
     }
     
-    const indexOfLastItem = currentPage * coinsPerPage;
-    const indexOfFirstItem = indexOfLastItem - coinsPerPage;
+    // const indexOfLastItem = currentPage * coinsPerPage;
+    // const indexOfFirstItem = indexOfLastItem - coinsPerPage;
     
 
     const renderPageNumbers = pages.map((number)=>{
@@ -44,12 +45,37 @@ const Pages = () => {
 
      
     })
+
+
+    let pageIncrementButton = null;
+    let pageDecrementButton = null;
+    // let maxPage = null;
+
+    if ( pages.length > maxPageNumberLimit) {
+        
+        pageIncrementButton = <div onClick={handlerNextButton} className="more-pages list-item">&hellip;</div>
+    }
+    console.log(currentPage,10)
+    if (currentPage  > 10   ) {
+        pageDecrementButton = <div onClick={handlerPreviousButton} className="more-pages list-item">&hellip;</div>
+    }else{
+        pageDecrementButton = null;
+    }
+
+   
+
+    // if (currentPage =< pages.length) {
+    //     maxPage
+    // }
    
     return(
           <PagesSection>
              <ul className="list-container">
                 <button disabled={ isButtonDisabled } className="previous list-item icons"  onClick={handlerPreviousButton}><GrFormPrevious className="previous-icon"/>Prev</button>
+                    {pageDecrementButton}
                     {renderPageNumbers}
+                    {pageIncrementButton}
+                    {/* {maxPage} */}
                 <button  className="next list-item icons" onClick={handlerNextButton}>Next <GrFormNext className="next-icon"/></button>
             </ul>
           </PagesSection>
@@ -58,23 +84,5 @@ const Pages = () => {
 
 }
 
-// return (
-//     <PagesSection>
-//         <div className="pages-container"  onClick={ (e)=>updateCurrentPage(e)} >
-//             <ul className="list-container"  onClick={fetchCoinsPage} >
-//                     <li className="previous list-item icons" ><GrFormPrevious className="previous-icon"/>Prev</li>
-//                     <li className=" list-item" >1</li>
-//                     <li className="list-item">2</li>
-//                     <li className="list-item">3</li>
-//                     <li className="list-item">4</li>
-//                     <li className="list-item">5</li>
-//                     <li className="list-item">....</li>
-//                     <li className="list-item">70</li>
-//                     <li className="next list-item icons">Next <GrFormNext className="next-icon"/></li>
-//             </ul>
-//         </div>
-    
-//     </PagesSection>
-// )
 
 export default Pages

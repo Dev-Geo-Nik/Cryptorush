@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export const PagesSection = styled.section`
 
-    margin: 6rem 0;
+    margin: 10rem 0;
 
 
     .list-container{
@@ -35,10 +35,12 @@ export const PagesSection = styled.section`
     .previous{
         border-left: 1px solid rgba(0, 0, 0, 0.2);
     
+    
     }
 
     .previous-icon{
-    
+        color: rgba(0, 0, 0, 0.2);
+       
     }
     
     .next-icon{

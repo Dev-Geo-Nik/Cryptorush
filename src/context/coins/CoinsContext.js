@@ -14,7 +14,8 @@ import {LOAD_ALL_COINS,
     SET_NEXT_PAGE,
     PREVIOUS_PAGE,
     SET_PREVIOUS_PAGE,
-    PREVIOUS_PAGE_BOOL
+    PREVIOUS_PAGE_BOOL,
+    SET_LOADING
    
 } from "../Actions";
 
@@ -23,8 +24,8 @@ const initialState = {
     allCoins: [],
     currentPage:1,
     coinsPerPage:100,
-    pageNumberLimit:5,
-    maxPageNumberLimit:5,
+    pageNumberLimit:10,
+    maxPageNumberLimit:10,
     minPageNumberLimit:1,
     isButtonDisabled:true,
     fiatCurrency:"usd",
@@ -34,7 +35,8 @@ const initialState = {
     marketCap24hVolume:[],
     marketCap24hVolumePercentage:0,
     coinsDominance:[],
-    trendingCoins:[]
+    trendingCoins:[],
+    isLoading:true
 
 }
 
@@ -60,6 +62,9 @@ export const CoinsProvider = ({children}) =>{
     useEffect (()=>{
         fetchCoinsPage()
     },[state.currentPage,state.maxPageNumberLimit])
+
+ 
+
 
    const fetchAllCoins = async  () =>{
     
@@ -141,23 +146,22 @@ export const CoinsProvider = ({children}) =>{
     }
 
     const handlerPreviousButton = ()=>{
-    
+        
+       
 
-        if (state.currentPage - 1 >= 5 ) {
+        if (state.currentPage - 1 > 10 ) {
        
             dispatch({type:SET_PREVIOUS_PAGE,payload:{max:state.maxPageNumberLimit - state.pageNumberLimit,min: state.minPageNumberLimit - state.pageNumberLimit ,pageNumber:state.currentPage - 1}})
             
         }else{
-            if (state.currentPage >= 1) {
-                
-               
-                
+            if (state.currentPage > 1) {
+                    
                 dispatch({type:PREVIOUS_PAGE,payload:state.currentPage - 1})
-            }else{
-                
-                dispatch({type:PREVIOUS_PAGE_BOOL,payload:{pageNum:state.currentPage - 1 ,button:true}})
-            }
-           
+            }       
+        }
+
+        if (state.currentPage == 1){
+            dispatch({type:PREVIOUS_PAGE_BOOL,payload:{pageNum:state.currentPage  ,button:true}})
         }
     }
 
@@ -175,8 +179,9 @@ export const CoinsProvider = ({children}) =>{
     }
 
     const updateCurrentPage =  (e)=>{
-        
-            dispatch({type:UPDATE_CURRENT_PAGE,payload:e.target.closest("li").innerText})
+            // console.log(e.target.closest("li").innerText)
+            const currentPageNumber = Number.parseInt(e.target.closest("li").innerText)
+            dispatch({type:UPDATE_CURRENT_PAGE,payload:currentPageNumber})
         
     }
 
@@ -190,16 +195,24 @@ export const CoinsProvider = ({children}) =>{
  
                  const data = await res.json();
                  dispatch({type:CHANGE_PAGE_COINS ,payload:data});
-             }
-         } catch (error) {
-                 console.log(error)
-         }
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        
+        
+        
+        const setLoading = (bool) => {
+            console.log("loading")
+            dispatch({type:SET_LOADING ,payload:bool});
+
     }
    
  
 
     return (
-        <CoinContext.Provider value={{...state,updateCurrentPage,fetchCoinsPage,handlerNextButton,handlerPreviousButton}}>
+        <CoinContext.Provider value={{...state,updateCurrentPage,fetchCoinsPage,handlerNextButton,handlerPreviousButton,setLoading}}>
             {children}
         </CoinContext.Provider>
     )
