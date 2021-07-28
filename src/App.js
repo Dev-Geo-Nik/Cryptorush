@@ -1,7 +1,8 @@
 import React from 'react';
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
-import {Footer} from "./components";
+import {Footer,Spinner} from "./components";
 import {Home ,Error } from "./routers";
+
 
 function App() {
   return (

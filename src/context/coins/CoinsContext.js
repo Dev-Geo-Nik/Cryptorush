@@ -36,7 +36,7 @@ const initialState = {
     marketCap24hVolumePercentage:0,
     coinsDominance:[],
     trendingCoins:[],
-    isLoading:true
+    isLoading:null
 
 }
 
@@ -68,6 +68,7 @@ export const CoinsProvider = ({children}) =>{
 
    const fetchAllCoins = async  () =>{
     
+     
 
        try {
 
@@ -75,12 +76,13 @@ export const CoinsProvider = ({children}) =>{
            const res = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${state.fiatCurrency}&order=market_cap_desc&per_page=100&page=${state.currentPage}&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C30d%2C1y`);
         
             if (res.status >= 200 || res.status <= 299 ) {
-
                 const data = await res.json();
+                setLoading(false);
                 dispatch({type:LOAD_ALL_COINS ,payload:data});
             }
         } catch (error) {
                 console.log(error)
+                setLoading(true);
         }
 
    }
@@ -142,40 +144,54 @@ export const CoinsProvider = ({children}) =>{
      }
     } catch (error) {
      console.log(error)
+     setLoading(true);
     }
     }
 
     const handlerPreviousButton = ()=>{
         
        
+        try {
 
-        if (state.currentPage - 1 > 10 ) {
-       
-            dispatch({type:SET_PREVIOUS_PAGE,payload:{max:state.maxPageNumberLimit - state.pageNumberLimit,min: state.minPageNumberLimit - state.pageNumberLimit ,pageNumber:state.currentPage - 1}})
+            if (state.currentPage - 1 > 10 ) {
             
-        }else{
-            if (state.currentPage > 1) {
-                    
-                dispatch({type:PREVIOUS_PAGE,payload:state.currentPage - 1})
-            }       
-        }
+                dispatch({type:SET_PREVIOUS_PAGE,payload:{max:state.maxPageNumberLimit - state.pageNumberLimit,min: state.minPageNumberLimit - state.pageNumberLimit ,pageNumber:state.currentPage - 1}})
+                
+            }else{
+                if (state.currentPage > 1) {
+                        
+                    dispatch({type:PREVIOUS_PAGE,payload:state.currentPage - 1})
+                }       
+            }
+    
+            if (state.currentPage == 1){
+                dispatch({type:PREVIOUS_PAGE_BOOL,payload:{pageNum:state.currentPage  ,button:true}})
+            }
 
-        if (state.currentPage == 1){
-            dispatch({type:PREVIOUS_PAGE_BOOL,payload:{pageNum:state.currentPage  ,button:true}})
+        } catch (error) {
+            console.log(error)
+            setLoading(true);
         }
+     
     }
 
 
     const handlerNextButton =  ()=>{
       
-        
-        if (state.currentPage + 1 > state.maxPageNumberLimit) {
-            dispatch({type:SET_NEXT_PAGE,payload:{max:state.maxPageNumberLimit + state.pageNumberLimit,min: state.minPageNumberLimit + state.pageNumberLimit ,pageNum:state.currentPage + 1,button:false}})
-            
-        }else{
-            dispatch({type:NEXT_PAGE,payload:{pageNum:state.currentPage + 1,button:false}})
-          
+        try {
+            if (state.currentPage + 1 > state.maxPageNumberLimit) {
+                dispatch({type:SET_NEXT_PAGE,payload:{max:state.maxPageNumberLimit + state.pageNumberLimit,min: state.minPageNumberLimit + state.pageNumberLimit ,pageNum:state.currentPage + 1,button:false}})
+                
+            }else{
+                dispatch({type:NEXT_PAGE,payload:{pageNum:state.currentPage + 1,button:false}})
+              
+            }
+        } catch (error) {
+            console.log(error)
+            setLoading(true);   
         }
+
+      
     }
 
     const updateCurrentPage =  (e)=>{
@@ -186,6 +202,7 @@ export const CoinsProvider = ({children}) =>{
     }
 
     const fetchCoinsPage = async ()=>{
+
         try {
 
 
@@ -198,6 +215,7 @@ export const CoinsProvider = ({children}) =>{
                 }
             } catch (error) {
                 console.log(error)
+                setLoading(true);
             }
         }
         

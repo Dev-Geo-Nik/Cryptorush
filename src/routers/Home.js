@@ -1,15 +1,16 @@
 import React from 'react';
-import {Header,Coins,Pages} from "../components/";
+import {Header,Coins,Pages,Spinner} from "../components/";
 
 
 
 const Home = () => {
+ 
 
     return (
-        <section>
-         <Header/>
-         <Coins/>
-         <Pages/>
+        <section style={{position: 'relative'}}>
+            <Header/>
+            <Coins/>
+            <Pages/>
         </section>
     )
     

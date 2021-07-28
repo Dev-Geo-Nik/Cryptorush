@@ -42,14 +42,20 @@ const Coins = () => {
                             <div className="row" >
                                 <span className="flex-group-coin-1">
                                     <div className="coin-rank font">{market_cap_rank}</div>
-                                    <div className="coin-image-container font"><img src={image} alt={`image of ${symbol}`} className="coin-image" />   <div className="coin-name font">{name}</div>   <div className="coin-symbol font">{symbol.toUpperCase()}</div> </div>                  
+                                    <div className="coin-image-container font">
+                                        <img src={image} alt={`image of ${symbol}`} className="coin-image" />
+                                           <div className="coin-name font">{name}</div>  
+                                           <div className="coin-symbol-container">
+                                                <div className="coin-symbol font">{symbol.toUpperCase()}</div>
+                                           </div>
+                                    </div>                  
                                     <div className="coin-price font">$ {current_price}</div>
                                 </span>
                                 <span className="flex-group-coin-2">
                                     <div className={chart1h && chart1h.toFixed(2) > 0 ? "coin-price-1h font green" : "coin-price-1h font red"}>{chart1h && chart1h.toFixed(2) } %</div>
                                     <div className={chart24h && chart24h.toFixed(2) > 0 ? "coin-price-24h font green" : "coin-price-24h font red"}>{chart24h && chart24h.toFixed(2) } %</div>
                                     <div className={chart7d && chart7d.toFixed(2) > 0 ? "coin-price-7d font green" : "coin-price-7d font red"}>{chart7d && chart7d.toFixed(2) } %</div>
-                                    <div className={chart30d && chart30d.toFixed(2) > 0 ? "coin-price-30d font green" : "coin-price-30d font red"}>{chart30d && chart30d.toFixed(2) } %</div>
+                                    {/* <div className={chart30d && chart30d.toFixed(2) > 0 ? "coin-price-30d font green" : "coin-price-30d font red"}>{chart30d && chart30d.toFixed(2) } %</div> */}
                                 </span>
                                 <span className="flex-group-coin-3">
                                     <div className="coin-volume font">$ {numberWithCommas(total_volume)}</div>
@@ -81,7 +87,7 @@ const Coins = () => {
                             <div className="price-1h text">1h</div>
                             <div className="price-24h text">24h</div>
                             <div className="price-7d text">7d</div>
-                            <div className="price-30d text">30d</div>
+                            {/* <div className="price-30d text">30d</div> */}
                         </div>
                         <div className="flex-group-3">
                             <div className="price-volume text">24h Volume</div>
@@ -90,7 +96,7 @@ const Coins = () => {
                     </div>
                 </div>
                 <div className="coins-table">
-                    { displayCoins ? displayCoins :setLoading(false) }
+                    { displayCoins }
                 </div>
 
                 {isLoading === true ? <Spinner /> : "" }

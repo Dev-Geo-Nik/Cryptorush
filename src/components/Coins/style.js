@@ -27,12 +27,12 @@ export const CoinsSection = styled.section`
 
     .flex-group-1{
         display: flex;
-        width: 60rem;
+        width: 80rem;
     }
 
     .flex-group-2{
         display: flex;
-        width: 50rem;
+        width: 30rem;
         justify-content: space-around;
     }
     .flex-group-3{
@@ -57,7 +57,7 @@ export const CoinsSection = styled.section`
 
     .price{
        margin-left:auto;
-       margin-right: 4rem;
+       margin-right: 8rem;
     }
 
  
@@ -68,7 +68,7 @@ export const CoinsSection = styled.section`
 
 
     .flex-group-coin-1{
-        width: 60rem;
+        width: 80rem;
         display: flex;
         justify-content:start;
         align-items: center;
@@ -79,7 +79,7 @@ export const CoinsSection = styled.section`
         display: flex;
         align-items: center;
         margin-left: 4rem;
-        width:30rem;
+        width:35rem;
         
     }
 
@@ -106,13 +106,25 @@ export const CoinsSection = styled.section`
         margin-left: 1rem;
     }
     
-    .coin-symbol{
+
+    .coin-symbol-container{
         margin-left: auto;
+
     }
+    
+    .coin-symbol{
+        text-align: left;
+        width: 5rem;
+    }
+
+
+   
+
 
     .coin-price{
         margin-left: auto;
-        margin-right: 4rem;
+        margin-right: 8rem;
+
      
     }
 
@@ -121,7 +133,7 @@ export const CoinsSection = styled.section`
         display: flex;
         align-items: center;
         justify-content: space-around;     
-        width: 50rem;
+        width: 30rem;
     
     }
 
