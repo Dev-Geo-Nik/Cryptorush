@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
-import {Footer,Spinner} from "./components";
+import {Footer, SingleCoin} from "./components";
 import {Home ,Error } from "./routers";
 
 
@@ -10,6 +10,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Home}/>
+          <Route exact path="/:id"  component={SingleCoin}/>
           <Route exact path="*" component={Error}/>
         </Switch>
       </Router>

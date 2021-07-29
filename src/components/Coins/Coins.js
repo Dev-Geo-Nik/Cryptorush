@@ -8,7 +8,7 @@ import Spinner from "../Spinner/Spinner";
 
 
 const Coins = () => {
-    const {allCoins,coinsCount,exchangesCount,isLoading,setLoading} = useCoinContext();
+    const {allCoins,coinsCount,exchangesCount,isLoading,setLoading,fetchSingleCoin} = useCoinContext();
     // console.log(allCoins,coinsCount,exchangesCount)
     // console.log(allCoins)
 
@@ -38,7 +38,7 @@ const Coins = () => {
                   
                     
                 return(
-                    <Link to ={`/${id}`} key={id} className="link-container">
+                    <Link to ={`/${id}`} key={id} className="link-container" >
                             <div className="row" >
                                 <span className="flex-group-coin-1">
                                     <div className="coin-rank font">{market_cap_rank}</div>
@@ -52,14 +52,14 @@ const Coins = () => {
                                     <div className="coin-price font">$ {current_price}</div>
                                 </span>
                                 <span className="flex-group-coin-2">
-                                    <div className={chart1h && chart1h.toFixed(2) > 0 ? "coin-price-1h font green" : "coin-price-1h font red"}>{chart1h && chart1h.toFixed(2) } %</div>
-                                    <div className={chart24h && chart24h.toFixed(2) > 0 ? "coin-price-24h font green" : "coin-price-24h font red"}>{chart24h && chart24h.toFixed(2) } %</div>
-                                    <div className={chart7d && chart7d.toFixed(2) > 0 ? "coin-price-7d font green" : "coin-price-7d font red"}>{chart7d && chart7d.toFixed(2) } %</div>
+                                    <div className={chart1h && chart1h.toFixed(2) > 0 ? "coin-price-1h font green" : "coin-price-1h font red"}>{chart1h ? chart1h.toFixed(2) :"---"} %</div>
+                                    <div className={chart24h && chart24h.toFixed(2) > 0 ? "coin-price-24h font green" : "coin-price-24h font red"}>{chart24h ? chart24h.toFixed(2) :"---"} %</div>
+                                    <div className={chart7d && chart7d.toFixed(2) > 0 ? "coin-price-7d font green" : "coin-price-7d font red"}>{chart7d ? chart7d.toFixed(2) : "---" } %</div>
                                     {/* <div className={chart30d && chart30d.toFixed(2) > 0 ? "coin-price-30d font green" : "coin-price-30d font red"}>{chart30d && chart30d.toFixed(2) } %</div> */}
                                 </span>
                                 <span className="flex-group-coin-3">
-                                    <div className="coin-volume font">$ {numberWithCommas(total_volume)}</div>
-                                    <div className="coin-market font">$ {numberWithCommas(market_cap)}</div>
+                                    <div className="coin-volume font">$ {numberWithCommas(total_volume)? numberWithCommas(total_volume) :"---"}</div>
+                                    <div className="coin-market font">$ {numberWithCommas(market_cap) ? numberWithCommas(market_cap): "---"}</div>
                                 </span>
                             </div>
                     </Link>  

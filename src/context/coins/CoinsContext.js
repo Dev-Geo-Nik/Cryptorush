@@ -15,7 +15,8 @@ import {LOAD_ALL_COINS,
     PREVIOUS_PAGE,
     SET_PREVIOUS_PAGE,
     PREVIOUS_PAGE_BOOL,
-    SET_LOADING
+    SET_LOADING,
+    SET_SINGLE_COIN
    
 } from "../Actions";
 
@@ -36,7 +37,8 @@ const initialState = {
     marketCap24hVolumePercentage:0,
     coinsDominance:[],
     trendingCoins:[],
-    isLoading:null
+    isLoading:null,
+    singleCoinData:[]
 
 }
 
@@ -153,7 +155,7 @@ export const CoinsProvider = ({children}) =>{
        
         try {
 
-            if (state.currentPage - 1 > 10 ) {
+            if (state.currentPage - 1 >= 10 ) {
             
                 dispatch({type:SET_PREVIOUS_PAGE,payload:{max:state.maxPageNumberLimit - state.pageNumberLimit,min: state.minPageNumberLimit - state.pageNumberLimit ,pageNumber:state.currentPage - 1}})
                 
@@ -218,7 +220,27 @@ export const CoinsProvider = ({children}) =>{
                 setLoading(true);
             }
         }
+
+
         
+        
+    const fetchSingleCoin = async (id)=>{
+
+        try {
+
+
+            const res = await fetch(`https://api.coingecko.com/api/v3/coins/${id}?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true`);
+         
+             if (res.status >= 200 || res.status <= 299 ) {
+ 
+                 const data = await res.json();
+                 dispatch({type:SET_SINGLE_COIN ,payload:data});
+                }
+            } catch (error) {
+                console.log(error)
+                setLoading(true);
+            }
+        }
         
         
         const setLoading = (bool) => {
@@ -230,7 +252,7 @@ export const CoinsProvider = ({children}) =>{
  
 
     return (
-        <CoinContext.Provider value={{...state,updateCurrentPage,fetchCoinsPage,handlerNextButton,handlerPreviousButton,setLoading}}>
+        <CoinContext.Provider value={{...state,updateCurrentPage,fetchCoinsPage,handlerNextButton,handlerPreviousButton,setLoading,fetchSingleCoin}}>
             {children}
         </CoinContext.Provider>
     )

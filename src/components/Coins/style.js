@@ -34,11 +34,14 @@ export const CoinsSection = styled.section`
         display: flex;
         width: 30rem;
         justify-content: space-around;
+        /* margin-right: 5rem; */
     }
+
     .flex-group-3{
         display: flex;
         width: 40rem;
-        justify-content: space-around;
+        justify-content: space-between;
+        padding-left: 4rem;
     }
     
 
@@ -60,9 +63,14 @@ export const CoinsSection = styled.section`
        margin-right: 8rem;
     }
 
+    .market-cap{
+        margin-right:4rem;
+    }
  
 
-
+    .price-volume{
+        margin-left: 3rem;
+    }
 
     /* coins style from map */
 
@@ -92,7 +100,7 @@ export const CoinsSection = styled.section`
  
 
     .font{
-        font-size: 1.6rem;  
+        font-size: 1.5rem;  
         color:#000;
     }
 
@@ -134,6 +142,7 @@ export const CoinsSection = styled.section`
         align-items: center;
         justify-content: space-around;     
         width: 30rem;
+        
     
     }
 
@@ -141,6 +150,7 @@ export const CoinsSection = styled.section`
         display: flex;
         justify-content:space-around;
         width: 38rem;
+        padding-left: 5rem;
     }
 
     .green{
@@ -159,7 +169,8 @@ export const CoinsSection = styled.section`
 
     .coin-market{
         width: 20rem;
-        text-align: center;
+        text-align: right;
+        
     }
 
 
