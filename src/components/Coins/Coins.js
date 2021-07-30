@@ -38,7 +38,7 @@ const Coins = () => {
                   
                     
                 return(
-                    <Link to ={`/${id}`} key={id} className="link-container" >
+                    <Link to ={`/${id}`} key={id} className="link-container" onClick={()=> fetchSingleCoin(id)} >
                             <div className="row" >
                                 <span className="flex-group-coin-1">
                                     <div className="coin-rank font">{market_cap_rank}</div>
@@ -99,7 +99,7 @@ const Coins = () => {
                     { displayCoins }
                 </div>
 
-                {isLoading === true ? <Spinner /> : "" }
+                {isLoading === true ? <Spinner /> : null }
         </CoinsSection>
     )
 }

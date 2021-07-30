@@ -225,7 +225,7 @@ export const CoinsProvider = ({children}) =>{
         
         
     const fetchSingleCoin = async (id)=>{
-
+        console.log(`loading singe coin : ${id}`)
         try {
 
 

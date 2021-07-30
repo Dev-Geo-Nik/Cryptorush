@@ -1,5 +1,5 @@
 import React from 'react';
-import {Header,Coins,Pages,Spinner} from "../components/";
+import {Coins,Pages} from "../components/";
 
 
 
@@ -7,8 +7,7 @@ const Home = () => {
  
 
     return (
-        <section style={{position: 'relative'}}>
-            <Header/>
+        <section >
             <Coins/>
             <Pages/>
         </section>

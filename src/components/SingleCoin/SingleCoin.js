@@ -1,15 +1,19 @@
 import React from 'react';
-import {SingleCoinSection} from "./style";
+import {SingleCoinSectionTag} from "./style";
 import {useCoinContext} from "../../context/coins/CoinsContext";
+import SingleCoinSection from "./SingleCoinStatus/SingleCoinStatus";
+import SingleCoinLinks from "./SingleCoinLinks/SingleCoinLinks";
+import SingleCoinMarketStats from "./SingleCoinMarketStats/SingleCoinMarketStats";
 
 const SingleCoin = () => {
     const {singleCoinData} = useCoinContext();
     console.log(singleCoinData)
     return (
-        <SingleCoinSection>
-         
-            <h5>   Single Coin Section Welcome</h5>
-        </SingleCoinSection>
+        <SingleCoinSectionTag>
+            <SingleCoinSection/>
+            <SingleCoinMarketStats/>
+            <SingleCoinLinks/>
+        </SingleCoinSectionTag>
     )
 
 }
