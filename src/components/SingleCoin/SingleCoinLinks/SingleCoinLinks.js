@@ -4,7 +4,7 @@ import {SingleCoinLinksSection} from "./style";
 const SingleCoinLinks = () => {
     return (
         <SingleCoinLinksSection>
-            SingleCoinLinksSection
+            SingleCoinLinksSection 
         </SingleCoinLinksSection>
     )
 }
