@@ -12,9 +12,7 @@ const Coins = () => {
     // console.log(allCoins,coinsCount,exchangesCount)
     // console.log(allCoins)
 
-    let displayCoins = []
-
-   console.log(isLoading)
+    let displayCoins = [];
 
     if (allCoins) {
         displayCoins = allCoins.map((coin)=>{

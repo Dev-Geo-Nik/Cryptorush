@@ -38,7 +38,7 @@ const initialState = {
     coinsDominance:[],
     trendingCoins:[],
     isLoading:null,
-    singleCoinData:[]
+    singleCoinData:null
 
 }
 
