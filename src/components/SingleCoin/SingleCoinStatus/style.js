@@ -4,17 +4,26 @@ import styled from "styled-components";
 export const SingleCoinStatusSection = styled.section`
  /* background:purple; */
     width: 33%;
-
+    
 
     .rank{
 
+    }
+
+    
+
+    .ranking-container{
+        display:flex;
+        justify-content:space-between;
+        align-items: center;
     }
     
     .rank-text{
         background: #343a40;
         color: #fff;
-        font-size:1.6rem;
-        padding:0.4rem;
+        font-size:1.7rem;
+        padding:0.6rem;
+        height: 100%;
         border-radius:0.5rem;
     }
 
@@ -23,7 +32,7 @@ export const SingleCoinStatusSection = styled.section`
         align-items: center;
         font-size:1.8rem;
         font-weight:bold;
-        margin-top: 1rem;
+        margin: 1rem 0;
     }
 
     .image{
@@ -40,6 +49,7 @@ export const SingleCoinStatusSection = styled.section`
     .price{
         font-size:2.5rem;
         font-weight: bold;
+        margin-left: auto;
     }
 
     .stars-container{
@@ -66,5 +76,26 @@ export const SingleCoinStatusSection = styled.section`
 
     
     }
+
+    .coin-stats-container{
+        font-size:1.6rem;  
+        /* background: rgba(0,0,0,0.1); */
+    }
+
+  
+    .containers{
+        display: flex;
+        justify-content:space-between;
+        margin-bottom: 1rem;
+    }
+
+    .text-general{
+        color: rgba(0,0,0,0.9);
+    }
+
+    .text-number-general{
+        font-weight: bold;
+    }
+
 
 `

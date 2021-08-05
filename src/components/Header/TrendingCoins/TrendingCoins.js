@@ -4,7 +4,7 @@ import {useCoinContext} from "../../../context/coins/CoinsContext";
 import { Link } from 'react-router-dom';
 
 const TrendingCoins = () => {
-    const {trendingCoins} = useCoinContext();
+    const {trendingCoins,fetchSingleCoin} = useCoinContext();
 
     
     let displayTrendingCoins = [];
@@ -13,14 +13,14 @@ const TrendingCoins = () => {
 
     const trendingCoinsArray = trendingCoins.coins && Object.entries(trendingCoins.coins);
             
-     displayTrendingCoins =  trendingCoinsArray.map((coin,index)=>{
+     displayTrendingCoins =  trendingCoinsArray.map((coin)=>{
         const {1:{item:{id,name,small,symbol,price_btc}}} = coin;
         // console.log(coin)
        
        
         return (
                
-                <Link to={`/${name}`} key={id} className="coin-container">       
+                <Link to={`/${name}`} key={id} className="coin-container" onClick={()=> fetchSingleCoin(id)}>       
                        <img src={small} alt={`${name} image`} className="coin-image" />
                        <div className="text-container">
                             <h5  className="name">{name}</h5>
