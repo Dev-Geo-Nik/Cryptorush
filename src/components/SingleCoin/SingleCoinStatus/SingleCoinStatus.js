@@ -38,7 +38,7 @@ const SingleCoinStatus = () => {
                 <img src={small} alt={name} className="image" />
                 <span className="name">{name}</span>
                 <span className="symbol">{`(${symbol.toUpperCase()})`}</span>
-                 <p className="price">$ {numberWithCommas(market_data.current_price.usd)}</p>
+                 <p className="price">$ {market_data.current_price.usd}</p>
             </div>
          
             <div className="coin-stats-container">

@@ -15,6 +15,10 @@ export const SingleCoinMarketStatsSection = styled.section`
         margin-bottom: 1rem;
     }
 
+    .title{
+        margin-bottom:2rem;
+    }
+
     
     .text-general{
         color: rgba(0,0,0,0.9);
@@ -29,5 +33,12 @@ export const SingleCoinMarketStatsSection = styled.section`
         margin-top: 1rem;
     }
 
+    .green{
+        color: green;
+    }
+
+    .red{
+        color:red;
+    }
 
 `
