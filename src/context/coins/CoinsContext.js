@@ -249,10 +249,30 @@ export const CoinsProvider = ({children}) =>{
 
     }
    
- 
+    
+
+    const redirectLink = (url) =>{
+        
+        window.location.href = url[0];
+    }
+
+    const redirectTwitter = (url) =>{
+        console.log(url)
+        // window.location.href = url
+    }
 
     return (
-        <CoinContext.Provider value={{...state,updateCurrentPage,fetchCoinsPage,handlerNextButton,handlerPreviousButton,setLoading,fetchSingleCoin}}>
+        <CoinContext.Provider value={{
+            ...state,
+            updateCurrentPage,
+            fetchCoinsPage,
+            handlerNextButton,
+            handlerPreviousButton,
+            setLoading,
+            fetchSingleCoin,
+            redirectLink,
+            redirectTwitter
+            }}>
             {children}
         </CoinContext.Provider>
     )

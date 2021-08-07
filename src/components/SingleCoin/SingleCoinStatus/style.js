@@ -32,7 +32,7 @@ export const SingleCoinStatusSection = styled.section`
         align-items: center;
         font-size:1.8rem;
         font-weight:bold;
-        margin: 1rem 0;
+        margin: 2rem 0 2rem 0;
     }
 
     .image{
@@ -86,7 +86,7 @@ export const SingleCoinStatusSection = styled.section`
     .containers{
         display: flex;
         justify-content:space-between;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
 
     .text-general{

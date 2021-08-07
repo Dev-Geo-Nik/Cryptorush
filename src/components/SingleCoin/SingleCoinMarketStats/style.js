@@ -12,7 +12,7 @@ export const SingleCoinMarketStatsSection = styled.section`
     .containers{
         display: flex;
         justify-content:space-between;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
 
     .title{
