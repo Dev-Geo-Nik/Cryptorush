@@ -95,6 +95,11 @@ export const CoinsSection = styled.section`
         border-bottom: 1px solid rgba(0, 0, 0, 0.2);
         display: inline-block;
         padding: 2rem 0;
+        transition: var(--transition);
+    }
+
+    .link-container:hover{
+        background: rgba(59,130,246,0.5);
     }
 
  

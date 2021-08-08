@@ -5,11 +5,12 @@ export const SingleCoinLinksSection = styled.section`
     width: 33%;
 
     .title{
-        margin-bottom:2rem;
+        margin-bottom:4rem;
     }
 
     .coin-links-container{
         font-size:1.6rem;
+        
     }
 
     .containers{
