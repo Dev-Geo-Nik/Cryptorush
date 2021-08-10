@@ -64,9 +64,14 @@ const SingleCoinLinks = () => {
                             <span className= "text-number-general">                   
                       
                             {singleCoinData.categories.map((category,index)=>{
-                                if (index >2) {  return }
-                                return (<span className="hashtags" key={index}>{category}</span>)           
+                               
+                                
+                                if (index < 1) {                                     
+                                     return (<span className="hashtags" key={index}>{category}</span>)           
+                                 }
+
                             })}
+                            
                         </span>               
                         </div>
 

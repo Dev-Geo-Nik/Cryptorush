@@ -4,6 +4,7 @@ import {SingleCoinSectionTag} from "./style";
 import SingleCoinSection from "./SingleCoinStatus/SingleCoinStatus";
 import SingleCoinLinks from "./SingleCoinLinks/SingleCoinLinks";
 import SingleCoinMarketStats from "./SingleCoinMarketStats/SingleCoinMarketStats";
+import SingleCoinDescription from "./SingleCoinDescription/SingleCoinDescription";
 
 const SingleCoin = () => {
     // const {singleCoinData} = useCoinContext();
@@ -11,9 +12,12 @@ const SingleCoin = () => {
 
     return (
         <SingleCoinSectionTag>
-            <SingleCoinSection/>
-            <SingleCoinMarketStats/>
-            <SingleCoinLinks/>
+            <div className="coin-detail-container">
+                <SingleCoinSection/>
+                <SingleCoinMarketStats/>
+                <SingleCoinLinks/>
+           </div>
+            {/* <SingleCoinDescription/> */}
         </SingleCoinSectionTag>
     )
 

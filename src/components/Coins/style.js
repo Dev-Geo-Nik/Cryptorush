@@ -94,7 +94,7 @@ export const CoinsSection = styled.section`
     .link-container{
         border-bottom: 1px solid rgba(0, 0, 0, 0.2);
         display: inline-block;
-        padding: 2rem 0;
+        padding: 2rem 2.5rem 2rem 0;
         transition: var(--transition);
     }
 

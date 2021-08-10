@@ -55,7 +55,7 @@ const Pages = () => {
         
         pageIncrementButton = <div onClick={handlerNextButton} className="more-pages list-item">&hellip;</div>
     }
-    console.log(currentPage,10)
+    // console.log(currentPage,10)
     if (currentPage  > 10   ) {
         pageDecrementButton = <div onClick={handlerPreviousButton} className="more-pages list-item">&hellip;</div>
     }else{
