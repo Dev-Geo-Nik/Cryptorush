@@ -12,4 +12,8 @@ export const SingleCoinSectionTag = styled.section`
       gap:6rem;
      
       }
+
+      .buttons-container{
+            /* margin: 0  var(--margin-x); */
+      }
 `;
