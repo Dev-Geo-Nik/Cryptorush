@@ -16,13 +16,15 @@ import {LOAD_ALL_COINS,
     SET_PREVIOUS_PAGE,
     PREVIOUS_PAGE_BOOL,
     SET_LOADING,
-    SET_SINGLE_COIN
+    SET_SINGLE_COIN,
+    SET_SEARCH_INPUT_VALUE
    
 } from "../Actions";
 
 const initialState = {
 
     allCoins: [],
+    searchInputValue:"",
     currentPage:1,
     coinsPerPage:100,
     pageNumberLimit:10,
@@ -38,7 +40,8 @@ const initialState = {
     coinsDominance:[],
     trendingCoins:[],
     isLoading:null,
-    singleCoinData:null
+    singleCoinData:null,
+    
 
 }
 
@@ -238,6 +241,7 @@ export const CoinsProvider = ({children}) =>{
                 }
             } catch (error) {
                 console.log(error)
+                window.location.href = "http://localhost:3000/"
                 setLoading(true);
             }
         }
@@ -261,6 +265,13 @@ export const CoinsProvider = ({children}) =>{
         // window.location.href = url
     }
 
+    const onChangeInputSearchHandler = (e) => {
+        console.log(e.target.value);
+
+        dispatch({type:SET_SEARCH_INPUT_VALUE ,payload:e.target.value});
+    }
+
+
     return (
         <CoinContext.Provider value={{
             ...state,
@@ -271,7 +282,8 @@ export const CoinsProvider = ({children}) =>{
             setLoading,
             fetchSingleCoin,
             redirectLink,
-            redirectTwitter
+            redirectTwitter,
+            onChangeInputSearchHandler
             }}>
             {children}
         </CoinContext.Provider>

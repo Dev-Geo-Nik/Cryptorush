@@ -12,7 +12,8 @@ import {LOAD_ALL_COINS,
     PREVIOUS_PAGE,
     PREVIOUS_PAGE_BOOL,
     SET_LOADING,
-    SET_SINGLE_COIN
+    SET_SINGLE_COIN,
+    SET_SEARCH_INPUT_VALUE
     
 } from "../Actions";
 
@@ -29,6 +30,7 @@ export default (state,action) =>{
     if (action.type === PREVIOUS_PAGE_BOOL)  return({...state,currentPage:action.payload.pageNum, isButtonDisabled:action.payload.button});
     if (action.type === SET_LOADING)  return({...state,isLoading:action.payload});
     if (action.type === SET_SINGLE_COIN)  return({...state,singleCoinData:action.payload});
+    if (action.type ===  SET_SEARCH_INPUT_VALUE)  return({...state,searchInputValue:action.payload});
     
     
     
