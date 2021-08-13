@@ -1,6 +1,6 @@
 import React from 'react';
 import {LogoSpan} from "./style";
-// import LogoImage from "../../../../assets/images/logo.jpeg";
+import LogoImage from  "../../../../assets/images/logo.jpg";
 import {Link} from "react-router-dom";
 
 const Logo = () => {
@@ -8,8 +8,8 @@ const Logo = () => {
     return (
         <LogoSpan>
             <Link to="/" >
-                 {/* <img src={LogoImage} alt="logo of the website" className="image" /> */}
-                 <span className="logo-text">CryptoRush</span>
+                 <img src={LogoImage} alt="logo of the website" className="image" />
+                 {/* <span className="logo-text">CryptoRush</span> */}
             </Link>
        
         </LogoSpan>
