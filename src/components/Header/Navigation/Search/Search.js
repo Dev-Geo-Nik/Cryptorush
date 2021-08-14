@@ -8,7 +8,7 @@ const Search = () => {
     
     return (
         <SearchSpan>
-            <form  >
+            <form  className="form" >
                 <input type="text" className="search-input"  placeholder="Enter the name of coin" value={searchInputValue}  onChange={(e)=>onChangeInputSearchHandler(e)}/>
                 <Link className="btn btn-submit" to={`/${searchInputValue}`} onClick={()=>fetchSingleCoin(searchInputValue.toLowerCase())}>Search</Link>
             </form>

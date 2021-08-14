@@ -21,4 +21,8 @@ export const SearchSpan = styled.span`
         background:   #075ce67d; 
     }
 
+    .form{
+        display: flex;
+    }
+
 `

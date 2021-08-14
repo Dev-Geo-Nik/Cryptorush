@@ -241,6 +241,7 @@ export const CoinsProvider = ({children}) =>{
                 }
             } catch (error) {
                 console.log(error)
+                alert("No matching results found. Please try again.");
                 window.location.href = "http://localhost:3000/"
                 setLoading(true);
             }

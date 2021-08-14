@@ -36,6 +36,22 @@ html {
     --margin-x: 20rem;
     --margin-y: 4rem;
     --section-margin-y: 20rem;
+
+    /* Media Query's */
+    /* 1400px / 16px */
+    --bp-largest: 87.5em;
+    /* 1100px / 16px */
+    --bp-big: 68.75em;
+    /* 800px / 16px */
+    --bp-large: 50em;
+    /* 600px / 16px */
+    --bp-medium: 37.5em;
+    /* 500px /16px */
+    --bp-small: 31.25em;
+    /* 400px /16px */
+    --bp-smallest: 25em;
+    /* 500px height */
+    --bp-landscape: 31.25em;
 }
 
 body {
