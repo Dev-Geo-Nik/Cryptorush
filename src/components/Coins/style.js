@@ -9,6 +9,7 @@ export const CoinsSection = styled.section`
     
 
     .table{
+        
         padding:  1rem 0;
         font-weight: bold;
         border-bottom: 2px solid rgba(0, 0, 0,0.2);
@@ -73,7 +74,10 @@ export const CoinsSection = styled.section`
     }
 
     /* coins style from map */
-
+    .coins-table{
+        display: flex;
+        flex-direction: column
+    }
 
     .flex-group-coin-1{
         width: 80rem;
