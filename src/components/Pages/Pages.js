@@ -64,9 +64,6 @@ const Pages = () => {
 
    
 
-    // if (currentPage =< pages.length) {
-    //     maxPage
-    // }
    
     return(
           <PagesSection>
@@ -75,7 +72,6 @@ const Pages = () => {
                     {pageDecrementButton}
                     {renderPageNumbers}
                     {pageIncrementButton}
-                    {/* {maxPage} */}
                 <button  className="next list-item icons" onClick={handlerNextButton}>Next <GrFormNext className="next-icon"/></button>
             </ul>
           </PagesSection>

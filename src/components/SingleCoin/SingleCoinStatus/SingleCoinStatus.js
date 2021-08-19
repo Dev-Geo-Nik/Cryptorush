@@ -6,7 +6,7 @@ import {numberWithCommas} from "../../../util/helpers";
 
 const SingleCoinStatus = () => {
     const {singleCoinData} = useCoinContext();
-    // console.log(singleCoinData)
+   
 
     let displayCoinDetails = [];
 

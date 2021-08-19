@@ -16,13 +16,6 @@ const SingleCoinLinks = () => {
     if (singleCoinData) {
         
         const{links ,name} = singleCoinData;
-        // console.log()
-        // console.log(links.repos_url.github[0])
-        // console.log()
-        // console.log()
-        // 
-        // console.log(singleCoinData.categories)
-       
 
         displayCoinLinks =
             <React.Fragment>

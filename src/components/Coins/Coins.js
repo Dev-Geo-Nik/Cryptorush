@@ -85,7 +85,7 @@ const Coins = () => {
                             <div className="price-1h text">1h</div>
                             <div className="price-24h text">24h</div>
                             <div className="price-7d text">7d</div>
-                            {/* <div className="price-30d text">30d</div> */}
+                            
                         </div>
                         <div className="flex-group-3">
                             <div className="price-volume text">24h Volume</div>

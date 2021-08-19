@@ -9,7 +9,6 @@ const Logo = () => {
         <LogoSpan>
             <Link to="/" >
                  <img src={LogoImage} alt="logo of the website" className="image" />
-                 {/* <span className="logo-text">CryptoRush</span> */}
             </Link>
        
         </LogoSpan>
