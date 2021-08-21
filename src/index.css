@@ -38,7 +38,8 @@ html {
     --section-margin-y: 20rem;
 
     /* Media Query's */
-    --bp-largest: 87.5em;
+    --bp-1850: 115.62em;
+    --bp-1400: 87.5em;
     /* 1400px / 16px */
     --bp-big: 68.75em;
     /* 1100px / 16px */
@@ -114,4 +115,34 @@ h5 {
     transform: var(--transition);
     border-color: transparent;
     font-weight: bold;
+}
+
+/* ********* MEDIA QUERIES  *********/
+
+@media (max-width: 1850px) {
+    html {
+        margin: 0rem -4rem;
+        font-size: 60%;
+    }
+}
+
+@media (max-width: 1650px) {
+    html {
+        margin: 0rem -8rem;
+        font-size: 60%;
+    }
+}
+
+@media (max-width: 1550px) {
+    html {
+        margin: 0rem -18.5rem;
+        font-size: 58%;
+    }
+}
+
+@media (max-width: 1350px) {
+    html {
+        margin: 0rem -19.5rem;
+        font-size: 55%;
+    }
 }

@@ -49,26 +49,30 @@ const Pages = () => {
 
     let pageIncrementButton = null;
     let pageDecrementButton = null;
-    // let maxPage = null;
+ 
 
     if ( pages.length > maxPageNumberLimit) {
         
         pageIncrementButton = <div onClick={handlerNextButton} className="more-pages list-item">&hellip;</div>
     }
-    // console.log(currentPage,10)
+  
     if (currentPage  > 10   ) {
         pageDecrementButton = <div onClick={handlerPreviousButton} className="more-pages list-item">&hellip;</div>
     }else{
         pageDecrementButton = null;
     }
 
-   
+    let displayPreviousButton = null;
 
-   
+   if (currentPage > 1) {
+    displayPreviousButton = <button disabled={ isButtonDisabled } className="previous list-item icons"  onClick={handlerPreviousButton}><GrFormPrevious className="previous-icon" />Prev</button>
+   }
+
+
     return(
           <PagesSection>
              <ul className="list-container">
-                <button disabled={ isButtonDisabled } className="previous list-item icons"  onClick={handlerPreviousButton}><GrFormPrevious className="previous-icon"/>Prev</button>
+                    {displayPreviousButton}
                     {pageDecrementButton}
                     {renderPageNumbers}
                     {pageIncrementButton}

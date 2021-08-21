@@ -187,4 +187,27 @@ export const CoinsSection = styled.section`
         width:2.5rem;
        
     }
+
+
+    /* MEDIA QUERIES */
+
+          @media (max-width:1650px){
+          .price{
+                margin-left:auto;
+                margin-right: 10rem;
+                }
+        }
+
+        @media (max-width:1300px){
+          .price{
+                margin-left:auto;
+                margin-right: 11rem;
+                }
+        }
+
+
+
 `
+
+
+
