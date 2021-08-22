@@ -42,13 +42,23 @@ export const TrendingCoinsSection = styled.section`
     }
 
 
-    @media (max-width:1350px){
+    @media (max-width: 1250px) {
+
+        .coins-container{
+       
+    
+         }
+
         .coin-container{
-            padding: 0.8rem;
-            width: 18rem;
+            display: grid;
             
-        }
-        }
+            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+            grid-template-rows:2;
+
+            background:red;
+            grid-auto-flow: column;
+          } 
+    }
 
 
 

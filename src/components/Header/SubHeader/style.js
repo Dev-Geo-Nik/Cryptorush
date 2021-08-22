@@ -87,4 +87,11 @@ export const SubHeaderSection  = styled.section`
     
     }
 
+
+    /* @media (max-width: 1550px) {
+        .container{
+            margin: 0 2rem;
+        }
+    } */
+
 `

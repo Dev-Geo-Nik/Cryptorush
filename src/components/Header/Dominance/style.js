@@ -31,5 +31,25 @@ export const  DominanceDiv = styled.div`
   }
 
 
+  @media (max-width: 1850px) {
+        
+      }
+  
+      @media (max-width: 1650px) {
+  
+      }
+  
+      @media (max-width: 1550px) {
+        .coins-container{
+
+          /* justify-content: space-around; */
+          /* margin: 0 2rem; */
+        }
+      }
+  
+      @media (max-width: 1350px) {
+         
+      }
+
 
 `
