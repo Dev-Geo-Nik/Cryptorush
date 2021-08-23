@@ -42,8 +42,7 @@ export const  DominanceDiv = styled.div`
       @media (max-width: 1550px) {
         .coins-container{
 
-          /* justify-content: space-around; */
-          /* margin: 0 2rem; */
+         
         }
       }
   

@@ -15,7 +15,7 @@ const TrendingCoins = () => {
             
      displayTrendingCoins =  trendingCoinsArray.map((coin)=>{
         const {1:{item:{id,name,small,symbol,price_btc}}} = coin;
-        // console.log(coin)
+      
        
        
         return (
