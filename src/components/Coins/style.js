@@ -35,14 +35,14 @@ export const CoinsSection = styled.section`
         display: flex;
         width: 30rem;
         justify-content: space-around;
-        /* margin-right: 5rem; */
+        margin-right: 5rem; 
     }
 
     .flex-group-3{
         display: flex;
         width: 40rem;
         justify-content: space-between;
-        padding-left: 4rem;
+        padding-left: 0rem;
     }
     
 
@@ -205,7 +205,53 @@ export const CoinsSection = styled.section`
                 }
         }
 
+        
+        @media (max-width:1050px){
 
+            .flex-group-2{
+                 margin-right:10rem;
+                  }
+
+
+                  .flex-group-3{
+                //    margin-right:2rem;
+              
+                   
+                }
+
+                .price-volume{
+                    margin-left: 0rem;
+                }
+          }
+       
+
+
+          @media (max-width:999px){
+            
+            .flex-group-2{
+                margin-right: 2rem; 
+                margin-left:auto;
+                
+            }
+
+            .flex-group-coin-2{
+                    margin-left:auto;
+            }
+
+
+
+
+                 .flex-group-3{
+                    display:none;          
+                }
+                
+                .flex-group-coin-3{
+                   display:none;          
+
+               }
+
+
+          }
 
 `
 

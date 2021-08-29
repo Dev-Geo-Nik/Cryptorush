@@ -4,6 +4,8 @@ import styled from "styled-components";
 export const TrendingCoinsSection = styled.section`
     padding: 2rem 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+    
     .title{
         margin-top:1rem;
     }
@@ -45,21 +47,45 @@ export const TrendingCoinsSection = styled.section`
     @media (max-width: 1250px) {
 
         .coins-container{
-       
-    
+           
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));         
+            grid-gap:4rem;
+            
          }
 
         .coin-container{
-            display: grid;
-            
-            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-            grid-template-rows:2;
-
-            background:red;
-            grid-auto-flow: column;
+          
           } 
     }
 
 
+    
+    @media (max-width: 1100px) {
+
+        .coins-container{
+           
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(3, 1fr));         
+            grid-gap:4rem;
+            
+         }
+
+      
+    }
+    
+
+    @media (max-width: 1050px) {
+
+        .coins-container{
+           
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;          
+            // grid-gap:4rem;
+            margin: 2rem;
+         }
+
+      
+    }
 
 `
