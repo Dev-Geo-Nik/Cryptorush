@@ -88,4 +88,20 @@ export const TrendingCoinsSection = styled.section`
       
     }
 
+
+    
+    @media (max-width: 750px) {
+
+        .coins-container{
+           
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr;          
+            grid-gap:2rem;
+            // margin: 2rem;
+         }
+
+      
+    }
+    
+
 `

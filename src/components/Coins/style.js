@@ -250,7 +250,19 @@ export const CoinsSection = styled.section`
 
                }
 
+               .coin-price{
+                margin-left: auto;
+                margin-right: 10rem;
+        
+             
+            }
+          }
 
+
+          @media (max-width:750px){
+            .coin-symbol-container{
+                margin-right:4rem;
+            } 
           }
 
 `

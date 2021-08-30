@@ -9,7 +9,7 @@ export const SubHeaderSection  = styled.section`
         display: flex;
         align-items: center;
         justify-content: space-between;
-        /* gap: 6rem; */
+        
     }
 
     .market-cap{
@@ -88,6 +88,12 @@ export const SubHeaderSection  = styled.section`
     }
 
 
-  
+    @media (max-width:999px){
+        .dominance{
+            display:none;
+        }
+
+    }
+
 
 `
