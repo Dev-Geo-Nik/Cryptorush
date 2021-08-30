@@ -265,6 +265,39 @@ export const CoinsSection = styled.section`
             } 
           }
 
+
+          @media (max-width:700px){
+            .price-7d{
+                display:none;
+            }
+
+            .coin-price-7d{
+                display:none;
+            }
+
+            .flex-group-2{
+                margin-right: -3rem; 
+                margin-left:auto;
+                
+            }
+
+            .flex-group-coin-2{
+                    margin-left:auto;
+                    margin-right: -4rem; 
+            }
+
+            .coin-price{
+                margin-left: auto;
+                margin-right: 6rem;
+        
+             
+            }
+
+            .price{
+                margin-right: 8rem;
+
+            }
+          }
 `
 
 
