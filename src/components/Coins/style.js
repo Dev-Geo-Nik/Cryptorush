@@ -35,14 +35,14 @@ export const CoinsSection = styled.section`
         display: flex;
         width: 30rem;
         justify-content: space-around;
-        /* margin-right: 5rem; */
+        margin-right: 5rem; 
     }
 
     .flex-group-3{
         display: flex;
         width: 40rem;
         justify-content: space-between;
-        padding-left: 4rem;
+        padding-left: 0rem;
     }
     
 
@@ -205,30 +205,104 @@ export const CoinsSection = styled.section`
                 }
         }
 
-        @media (max-width:1250px){
+
+
+        
+        @media (max-width:1050px){
+
+            .flex-group-2{
+                 margin-right:10rem;
+                  }
+
+
+                  .flex-group-3{
+                //    margin-right:2rem;
+              
+                   
+                }
+
+                .price-volume{
+                    margin-left: 0rem;
+                }
+          }
+       
+
+
+          @media (max-width:999px){
+            
+            .flex-group-2{
+                margin-right: 2rem; 
+                margin-left:auto;
+                
+            }
+
+            .flex-group-coin-2{
+                    margin-left:auto;
+            }
 
 
 
 
-            /* .price-24h{
-                display:none;
-            } */
+                 .flex-group-3{
+                    display:none;          
+                }
+                
+                .flex-group-coin-3{
+                   display:none;          
+
+               }
+
+               .coin-price{
+                margin-left: auto;
+                margin-right: 10rem;
+        
+             
+            }
+          }
+
+
+          @media (max-width:750px){
+            .coin-symbol-container{
+                margin-right:4rem;
+            } 
+          }
+
+
+          @media (max-width:700px){
             .price-7d{
                 display:none;
             }
 
 
-            /* .coin-price-24h{
-                display:none;
-            } */
             .coin-price-7d{
                 display:none;
             }
 
         }
 
+            /* .flex-group-2{
+                margin-right: -3rem; 
+                margin-left:auto;
+                
+            }
 
+            .flex-group-coin-2{
+                    margin-left:auto;
+                    margin-right: -4rem; 
+            }
 
+            .coin-price{
+                margin-left: auto;
+                margin-right: 6rem;
+        
+             
+            }
+
+            .price{
+                margin-right: 8rem;
+
+            }
+          } */
 `
 
 

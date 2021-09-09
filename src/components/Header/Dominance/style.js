@@ -31,24 +31,16 @@ export const  DominanceDiv = styled.div`
   }
 
 
-  @media (max-width: 1850px) {
-        
+  @media (max-width:750px){
+    .coins-container{
+      display :grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;  
+      grid-gap:2rem;
+      justify-items: center;
+      
+    
       }
-  
-      @media (max-width: 1650px) {
-  
-      }
-  
-      @media (max-width: 1550px) {
-        .coins-container{
-
-         
-        }
-      }
-  
-      @media (max-width: 1350px) {
-         
-      }
+  }
 
 
 `
