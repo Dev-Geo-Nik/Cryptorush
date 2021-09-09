@@ -45,18 +45,16 @@ export const TrendingCoinsSection = styled.section`
     @media (max-width: 1250px) {
 
         .coins-container{
-       
+            display: grid;
+            
+            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+            grid-gap: 2rem;
+            
     
          }
 
         .coin-container{
-            display: grid;
-            
-            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-            grid-template-rows:2;
-
-            background:red;
-            grid-auto-flow: column;
+           
           } 
     }
 

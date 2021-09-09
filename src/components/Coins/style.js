@@ -205,6 +205,28 @@ export const CoinsSection = styled.section`
                 }
         }
 
+        @media (max-width:1250px){
+
+
+
+
+            /* .price-24h{
+                display:none;
+            } */
+            .price-7d{
+                display:none;
+            }
+
+
+            /* .coin-price-24h{
+                display:none;
+            } */
+            .coin-price-7d{
+                display:none;
+            }
+
+        }
+
 
 
 `
