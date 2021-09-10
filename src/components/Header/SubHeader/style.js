@@ -94,6 +94,19 @@ export const SubHeaderSection  = styled.section`
         }
 
     }
+    @media (max-width:700px){
+        .volume-24{
+            display:none;
+        }
+
+    }
+
+    @media (max-width:481px){
+        .market-cap{
+            display:none;
+        }
+
+    }
 
 
 `

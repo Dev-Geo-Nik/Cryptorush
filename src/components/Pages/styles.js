@@ -61,4 +61,9 @@ export const PagesSection = styled.section`
     }
 
     
+    @media (max-width:340px){
+        .list-container{
+            /* font-size: 1.5rem; */
+        }
+    }
 `

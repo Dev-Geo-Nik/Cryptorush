@@ -24,8 +24,6 @@ export const Nav  = styled.nav`
 
     }
 
-    /* @media (max-width: 1350px) {
-        margin: 0 2rem;
-    } */
+  
     
 `

@@ -35,7 +35,7 @@ export const CoinsSection = styled.section`
         display: flex;
         width: 30rem;
         justify-content: space-around;
-        margin-right: 5rem; 
+        margin-right: 2rem; 
     }
 
     .flex-group-3{
@@ -61,7 +61,7 @@ export const CoinsSection = styled.section`
 
     .price{
        margin-left:auto;
-       margin-right: 8rem;
+       margin-right: 10rem;
     }
 
     .market-cap{
@@ -70,7 +70,7 @@ export const CoinsSection = styled.section`
  
 
     .price-volume{
-        margin-left: 3rem;
+        margin-left: 7rem;
     }
 
     /* coins style from map */
@@ -140,7 +140,7 @@ export const CoinsSection = styled.section`
 
     .coin-price{
         margin-left: auto;
-        margin-right: 8rem;
+        margin-right: 10rem;
 
      
     }
@@ -189,41 +189,67 @@ export const CoinsSection = styled.section`
     }
 
 
+
+
+
+
+
+
+
+
+    
     /* MEDIA QUERIES */
 
           @media (max-width:1650px){
           .price{
-                margin-left:auto;
+                /* margin-left:auto; */
                 margin-right: 10rem;
                 }
         }
 
+        @media (max-width:1250px){
+            .price{
+                /* margin-left:auto; */
+                  margin-right: 14rem;
+            }
+
+            /* .coin-price{
+                margin-right: 2rem;
+            } */
+        }
+
         @media (max-width:1300px){
           .price{
-                margin-left:auto;
+                /* margin-left:auto; */
                 margin-right: 11rem;
                 }
         }
 
 
+        @media (max-width:1250px){
+          .price{
+               
+                margin-right: 12rem;
+                }
+        }
 
         
-        @media (max-width:1050px){
+        @media (max-width:1100px){
+            
+            .flex-group-1{
+            }
 
             .flex-group-2{
-                 margin-right:10rem;
-                  }
+                 margin-right: 6rem;
+             }
 
+                .flex-group-3{
+            }
 
-                  .flex-group-3{
-                //    margin-right:2rem;
-              
-                   
+                .price-volume{            
+                    margin-left: 3rem;                  
                 }
-
-                .price-volume{
-                    margin-left: 0rem;
-                }
+             
           }
        
 
@@ -280,29 +306,91 @@ export const CoinsSection = styled.section`
 
         }
 
-            /* .flex-group-2{
-                margin-right: -3rem; 
-                margin-left:auto;
-                
+        @media (max-width:500px){
+
+            .price-1h{
+                display:none;
+            }
+            .coin-price-1h{
+                display:none;
             }
 
-            .flex-group-coin-2{
-                    margin-left:auto;
-                    margin-right: -4rem; 
+            .price-24h{
+                display:none;
             }
-
-            .coin-price{
-                margin-left: auto;
-                margin-right: 6rem;
-        
-             
+            .coin-price-24h{
+                display:none;
             }
 
             .price{
-                margin-right: 8rem;
-
+                
+                margin-right:-10rem;
+                
             }
-          } */
+
+            .coin-price{
+               
+                width:10rem;
+                margin-left: 4rem;
+            }
+        }
+
+
+
+        @media (max-width:481px){
+            .coin-symbol{
+                margin-right: 8rem;
+            }
+
+            .coin-price{
+               
+               /* width:8rem; */
+               margin-left:-4rem;
+           }
+           .price{
+                
+                margin-right:-6rem;
+                
+            }
+        }
+
+        @media (max-width:420px){
+            .price{
+                
+                margin-right:-8rem;
+                
+            }
+        }
+
+        @media (max-width:340px){
+            .link-container{
+                padding: 1rem 1.5rem 1rem 0;
+            }
+
+            .coin-symbol{
+               
+            }
+
+            .price{
+                margin-right:-6rem;   
+                
+            }
+            .coin-price{
+               
+               width:10rem;
+               margin-left:-8rem;
+             
+           }
+            .coin-rank{
+            margin-left: 0rem;     
+            }
+
+            .rank{   
+              margin-left: 0rem;
+          }
+
+        }
+       
 `
 
 

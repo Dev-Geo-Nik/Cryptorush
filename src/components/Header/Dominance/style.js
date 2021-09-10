@@ -42,5 +42,9 @@ export const  DominanceDiv = styled.div`
       }
   }
 
-
+    @media (max-width:500px){
+      .coins-container{
+        grid-template-columns: 1fr 1fr ;  
+      }
+    }
 `

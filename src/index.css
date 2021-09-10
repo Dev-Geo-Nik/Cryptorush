@@ -159,4 +159,10 @@ h5 {
         margin: 0rem -19rem;
         font-size: 50%;
     }
+
+    @media (max-width: 380px) {
+        html {
+            font-size: 44%;
+        }
+    }
 }

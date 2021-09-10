@@ -8,4 +8,12 @@ export const LogoSpan = styled.span`
        
     }
 
+
+    @media (max-width:750px){
+        .image{
+            width:7rem;
+            height:7rem;
+        }
+    }
+
 `

@@ -60,33 +60,40 @@ export const TrendingCoinsSection = styled.section`
           } 
     }
     
-
-    @media (max-width: 1050px) {
+    @media (max-width:1100px){ 
 
         .coins-container{
-           
-            display:grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;          
-            // grid-gap:4rem;
-            margin: 2rem;
+            
+            
+            grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+            justify-items:center;
+            
+    
          }
-
-      
     }
+   
 
 
     
     @media (max-width: 750px) {
 
-        .coins-container{
-           
-            display:grid;
+        .coins-container{       
             grid-template-columns: 1fr 1fr 1fr;          
-            grid-gap:2rem;
-            // margin: 2rem;
          }
+  }
 
-      
+
+    @media (max-width: 500px) {
+
+        .coins-container{
+          
+            grid-template-columns: 1fr; 
+        }
+
+        .coin-container{
+            width: 90%;
+          
+        }
     }
     
 
