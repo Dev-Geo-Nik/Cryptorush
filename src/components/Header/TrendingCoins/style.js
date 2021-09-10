@@ -43,6 +43,14 @@ export const TrendingCoinsSection = styled.section`
         margin-left:2rem;
     }
 
+    @media (min-width:3820px){
+        
+        
+        .coin-container{
+            
+           width: 45rem;
+        } 
+    }
 
     @media (max-width: 1250px) {
 

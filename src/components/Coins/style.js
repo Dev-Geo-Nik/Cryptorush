@@ -200,6 +200,40 @@ export const CoinsSection = styled.section`
     
     /* MEDIA QUERIES */
 
+          @media (min-width:3820px){
+            .flex-group-1{
+                
+                width: 30%;
+            }
+
+            .flex-group-2{
+                width: 30%;
+            }
+
+            .flex-group-3{
+                width: 30%;
+            }
+
+
+            .flex-group-coin-1{
+                width: 30%;
+            }
+            .flex-group-coin-2{
+                width: 30%;
+            }
+            .flex-group-coin-3{
+                width: 30%;
+            }
+
+            .market-cap{
+                margin-right:20rem;
+            }
+            
+            .price-volume{
+            margin-left: 21rem;
+        }
+          }
+
           @media (max-width:1650px){
           .price{
                 /* margin-left:auto; */
