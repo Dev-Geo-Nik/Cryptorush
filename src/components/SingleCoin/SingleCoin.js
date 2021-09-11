@@ -13,15 +13,22 @@ const SingleCoin = () => {
 
 
     return (
+     
         <React.Fragment>
-        <SingleCoinButtons/>
-        <SingleCoinSectionTag>        
-                <SingleCoinSection/>
-                <SingleCoinMarketStats/>
-                <SingleCoinLinks/>       
-            {/* <SingleCoinDescription/> */}
-        </SingleCoinSectionTag>
+
+        
+            <SingleCoinButtons/>
+            <SingleCoinSectionTag>
+                    <div className="container">
+                    <SingleCoinSection/>
+                    <SingleCoinMarketStats/>
+                    <SingleCoinLinks/>       
+                    </div>        
+                {/* <SingleCoinDescription/> */}
+            </SingleCoinSectionTag>
+           
         </React.Fragment>
+       
     )
 
 }

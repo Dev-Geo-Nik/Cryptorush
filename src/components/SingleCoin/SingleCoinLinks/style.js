@@ -2,7 +2,7 @@ import styled  from "styled-components";
 
 export const SingleCoinLinksSection = styled.section`
 
-    width: 33%;
+    /* width: 33%; */
 
     .title{
         margin-bottom:4rem;

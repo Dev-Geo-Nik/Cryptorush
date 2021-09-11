@@ -18,8 +18,8 @@ const SingleCoinMarketStats = () => {
       
         displayCoinMarketStats = 
             <div className="container">
-                <h1 className="title">{name} Price </h1>
                 <div className="coin-market-stats-container">
+                <h1 className="title">{name} Price </h1>
 
 
                     <div className="containers price-7d-container">

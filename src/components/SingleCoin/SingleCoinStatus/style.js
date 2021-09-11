@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const SingleCoinStatusSection = styled.section`
  /* background:purple; */
-    width: 33%;
+    /* width: 33%; */
     
 
     .rank{
@@ -97,5 +97,14 @@ export const SingleCoinStatusSection = styled.section`
         font-weight: bold;
     }
 
+
+
+    @media (max-width:1100px){
+      .general-container{
+        
+      }
+    }
+       
+    
 
 `

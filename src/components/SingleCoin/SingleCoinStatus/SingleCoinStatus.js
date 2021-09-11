@@ -24,6 +24,8 @@ const SingleCoinStatus = () => {
 
         displayCoinDetails = 
         <React.Fragment>
+          <div className="general-container">
+               
             <div className="ranking-container">
                 <div className="rank"><span className="rank-text">Rank #{market_cap_rank}</span> </div>
                 <div className="stars-container">
@@ -62,7 +64,8 @@ const SingleCoinStatus = () => {
                     <span className="Max-Supply text-general">Max Supply </span>
                     <span className="Max-Supply-text text-number-general">{market_data.max_supply ? numberWithCommas(market_data.max_supply):"∞"}</span>
                 </div>
-            </div>
+            </div>        
+         </div>   
         </React.Fragment>
         
 

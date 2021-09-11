@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 
 export const SingleCoinMarketStatsSection = styled.section`
- width: 33%;
+   /* width: 33%; */
 
 
     .coin-market-stats-container{
         font-size:1.6rem;  
+        width: 100%;
     }
 
     .containers{
@@ -26,6 +27,7 @@ export const SingleCoinMarketStatsSection = styled.section`
 
     .text-number-general{
         font-weight: bold;
+    
     }
 
 
