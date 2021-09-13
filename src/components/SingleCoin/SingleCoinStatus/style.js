@@ -79,7 +79,7 @@ export const SingleCoinStatusSection = styled.section`
 
     .coin-stats-container{
         font-size:1.6rem;  
-        /* background: rgba(0,0,0,0.1); */
+       
     }
 
   

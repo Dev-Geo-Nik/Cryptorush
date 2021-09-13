@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 export const SingleCoinMarketStatsSection = styled.section`
-   /* width: 33%; */
+
 
 
     .coin-market-stats-container{

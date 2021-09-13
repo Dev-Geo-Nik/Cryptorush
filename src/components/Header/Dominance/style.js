@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const  DominanceDiv = styled.div`
-  /* margin: 2rem 0; */
+
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   
 .coins-container{

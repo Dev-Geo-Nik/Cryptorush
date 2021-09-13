@@ -61,13 +61,7 @@ export const SubHeaderSection  = styled.section`
         color:green;
     }
 
-    .coins{
-    }
-    .exchanges{
-  
-        
-        
-    }
+
     .coins-text{
         color: #8dc647;
         color: rgba(59,130,246,0.5);

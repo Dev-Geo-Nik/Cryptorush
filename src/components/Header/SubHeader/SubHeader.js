@@ -3,7 +3,7 @@ import {SubHeaderSection} from "./style";
 import {useCoinContext} from "../../../context/coins/CoinsContext";
 import {Link} from "react-router-dom";
 import {numberWithCommas} from "../../../util/helpers";
-import { GoArrowSmallUp ,GoArrowSmallDown} from "react-icons/go";
+// import { GoArrowSmallUp ,GoArrowSmallDown} from "react-icons/go";
 import { FaLevelUpAlt ,FaLevelDownAlt } from "react-icons/fa";
 
 const SubHeader = () => {

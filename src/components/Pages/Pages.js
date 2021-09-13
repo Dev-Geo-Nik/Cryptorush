@@ -10,17 +10,13 @@ const Pages = () => {
     const { 
         currentPage,
         updateCurrentPage,
-        fetchCoinsPage,
-        allCoins,
-        coinsPerPage,
-        pageNumberLimit,
         maxPageNumberLimit,
         minPageNumberLimit,
         handlerNextButton,
         handlerPreviousButton,
         isButtonDisabled
     } = useCoinContext();
-    // console.log(allCoins);
+    
 
     const pages = [];
     for (let i = 1; i < 77; i++) {
@@ -28,8 +24,7 @@ const Pages = () => {
         pages.push(i); 
     }
     
-    // const indexOfLastItem = currentPage * coinsPerPage;
-    // const indexOfFirstItem = indexOfLastItem - coinsPerPage;
+
     
 
     const renderPageNumbers = pages.map((number)=>{

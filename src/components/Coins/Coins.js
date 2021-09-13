@@ -8,9 +8,8 @@ import Spinner from "../Spinner/Spinner";
 
 
 const Coins = () => {
-    const {allCoins,coinsCount,exchangesCount,isLoading,setLoading,fetchSingleCoin} = useCoinContext();
-    // console.log(allCoins,coinsCount,exchangesCount)
-    // console.log(allCoins)
+    const {allCoins,isLoading,fetchSingleCoin} = useCoinContext();
+  
 
     let displayCoins = [];
 

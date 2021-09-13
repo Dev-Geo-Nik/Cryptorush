@@ -236,25 +236,23 @@ export const CoinsSection = styled.section`
 
           @media (max-width:1650px){
           .price{
-                /* margin-left:auto; */
+           
                 margin-right: 10rem;
                 }
         }
 
         @media (max-width:1250px){
             .price{
-                /* margin-left:auto; */
+              
                   margin-right: 14rem;
             }
 
-            /* .coin-price{
-                margin-right: 2rem;
-            } */
+         
         }
 
         @media (max-width:1300px){
           .price{
-                /* margin-left:auto; */
+         
                 margin-right: 11rem;
                 }
         }
@@ -378,7 +376,7 @@ export const CoinsSection = styled.section`
 
             .coin-price{
                
-               /* width:8rem; */
+            
                margin-left:-4rem;
            }
            .price{
