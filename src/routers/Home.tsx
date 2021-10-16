@@ -1,5 +1,5 @@
 import React from 'react';
-import {Coins,Pages} from "../components/";
+import {Coins,Pages} from "../components";
 
 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import {CoinsSection} from "../Coins/style";
+import {CoinsSection} from "./style";
 import {useCoinContext} from "../../context/coins/CoinsContext";
 import {Link} from "react-router-dom";
 import {numberWithCommas} from "../../util/helpers";
