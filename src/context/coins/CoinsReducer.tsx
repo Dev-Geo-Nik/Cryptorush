@@ -1,5 +1,6 @@
 //import actions
-import {LOAD_ALL_COINS,
+import {
+    LOAD_ALL_COINS,
     GET_NUMBER_OF_ALL_COINS,
     GET_NUMBER_OF_ALL_EXCHANGES,
     GET_GLOBAL_DATA,

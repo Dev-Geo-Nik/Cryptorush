@@ -46,9 +46,17 @@ const initialState = {
 }
 
 
-const CoinContext = createContext();
 
-export const CoinsProvider = ({children}) =>{
+// interface IContextProps{
+//     state: IState;
+//      dispatch: ({type}:{type:string}) => void;
+// }
+
+
+// const CoinContext = createContext();
+const CoinContext = React.createContext(initialState);
+
+export const CoinsProvider:React.FC = ({children}) =>{
 
     const [state,dispatch] = useReducer(reducer,initialState);
 
@@ -169,7 +177,7 @@ export const CoinsProvider = ({children}) =>{
                 }       
             }
     
-            if (state.currentPage == 1){
+            if (state.currentPage === 1){
                 dispatch({type:PREVIOUS_PAGE_BOOL,payload:{pageNum:state.currentPage  ,button:true}})
             }
 
@@ -199,7 +207,7 @@ export const CoinsProvider = ({children}) =>{
       
     }
 
-    const updateCurrentPage =  (e)=>{
+    const updateCurrentPage =  (e  )=>{
             // console.log(e.target.closest("li").innerText)
             const currentPageNumber = Number.parseInt(e.target.closest("li").innerText)
             dispatch({type:UPDATE_CURRENT_PAGE,payload:currentPageNumber})
@@ -227,7 +235,7 @@ export const CoinsProvider = ({children}) =>{
 
         
         
-    const fetchSingleCoin = async (id)=>{
+    const fetchSingleCoin = async (id:string) => {
         console.log(`loading singe coin : ${id}`)
         try {
 
@@ -248,7 +256,7 @@ export const CoinsProvider = ({children}) =>{
         }
         
         
-        const setLoading = (bool) => {
+        const setLoading = (bool:boolean) => {
             console.log("loading")
             dispatch({type:SET_LOADING ,payload:bool});
 
@@ -256,12 +264,12 @@ export const CoinsProvider = ({children}) =>{
    
     
 
-    const redirectLink = (url) =>{
+    const redirectLink = (url:string) => {
         
         window.location.href = url[0];
     }
 
-    const redirectTwitter = (url) =>{
+    const redirectTwitter = (url:string) => {
         console.log(url)
         // window.location.href = url
     }

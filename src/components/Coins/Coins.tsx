@@ -7,11 +7,12 @@ import Spinner from "../Spinner/Spinner";
 
 
 
-const Coins = () => {
+
+const Coins:React.FC = () => {
     const {allCoins,isLoading,fetchSingleCoin} = useCoinContext();
   
 
-    let displayCoins = [];
+    let displayCoins= [];
 
     if (allCoins) {
         displayCoins = allCoins.map((coin)=>{
