@@ -9,10 +9,10 @@ import Spinner from "../Spinner/Spinner";
 
 
 const Coins:React.FC = () => {
-    const {allCoins,isLoading,fetchSingleCoin} = useCoinContext();
+    const {allCoins,isLoading} = useCoinContext();
   
 
-    let displayCoins= [];
+    let displayCoins:{}= [];
 
     if (allCoins) {
         displayCoins = allCoins.map((coin)=>{
@@ -36,12 +36,12 @@ const Coins:React.FC = () => {
                   
                     
                 return(
-                    <Link to ={`/${id}`} key={id} className="link-container" onClick={()=> fetchSingleCoin(id)} >
+                    <Link to ={`/${id}`} key={id} className="link-container"  >
                             <div className="row" >
                                 <span className="flex-group-coin-1">
                                     <div className="coin-rank font">{market_cap_rank}</div>
                                     <div className="coin-image-container font">
-                                        <img src={image} alt={`image of ${symbol}`} className="coin-image" />
+                                        <img src={image} alt={` ${symbol}`} className="coin-image" />
                                            <div className="coin-name font">{name}</div>  
                                            <div className="coin-symbol-container">
                                                 <div className="coin-symbol font">{symbol.toUpperCase()}</div>

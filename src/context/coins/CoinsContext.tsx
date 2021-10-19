@@ -207,7 +207,7 @@ export const CoinsProvider:React.FC = ({children}) =>{
       
     }
 
-    const updateCurrentPage =  (e  )=>{
+    const updateCurrentPage =  (e: React.MouseEventHandler<HTMLAllCollection> )=>{
             // console.log(e.target.closest("li").innerText)
             const currentPageNumber = Number.parseInt(e.target.closest("li").innerText)
             dispatch({type:UPDATE_CURRENT_PAGE,payload:currentPageNumber})
@@ -235,25 +235,25 @@ export const CoinsProvider:React.FC = ({children}) =>{
 
         
         
-    const fetchSingleCoin = async (id:string) => {
-        console.log(`loading singe coin : ${id}`)
-        try {
+    // const fetchSingleCoin = async (id:string) => {
+    //     console.log(`loading singe coin : ${id}`)
+    //     try {
 
 
-            const res = await fetch(`https://api.coingecko.com/api/v3/coins/${id}?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true`);
+    //         const res = await fetch(`https://api.coingecko.com/api/v3/coins/${id}?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true`);
          
-             if (res.status >= 200 || res.status <= 299 ) {
+    //          if (res.status >= 200 || res.status <= 299 ) {
  
-                 const data = await res.json();
-                 dispatch({type:SET_SINGLE_COIN ,payload:data});
-                }
-            } catch (error) {
-                console.log(error)
-                alert("No matching results found. Please try again.");
-                window.location.href = "http://localhost:3000/"
-                setLoading(true);
-            }
-        }
+    //              const data = await res.json();
+    //              dispatch({type:SET_SINGLE_COIN ,payload:data});
+    //             }
+    //         } catch (error) {
+    //             console.log(error)
+    //             alert("No matching results found. Please try again.");
+    //             window.location.href = "http://localhost:3000/"
+    //             setLoading(true);
+    //         }
+    //     }
         
         
         const setLoading = (bool:boolean) => {
@@ -274,7 +274,7 @@ export const CoinsProvider:React.FC = ({children}) =>{
         // window.location.href = url
     }
 
-    const onChangeInputSearchHandler = (e) => {
+    const onChangeInputSearchHandler = (e:any) => {
         console.log(e.target.value);
 
         dispatch({type:SET_SEARCH_INPUT_VALUE ,payload:e.target.value});
@@ -289,7 +289,7 @@ export const CoinsProvider:React.FC = ({children}) =>{
             handlerNextButton,
             handlerPreviousButton,
             setLoading,
-            fetchSingleCoin,
+            
             redirectLink,
             redirectTwitter,
             onChangeInputSearchHandler
